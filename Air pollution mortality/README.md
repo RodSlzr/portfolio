@@ -8,7 +8,7 @@ Pandas, NumPy, ARIMA, PyTorch, Matplotlib, and Plotly
 
 ## Files Structure
 
-### -Data Viz (Independent Project, same data source)
+### -[Data Viz (Independent Project, same data source, broader focus)](https://github.com/RodSlzr/portfolio/tree/main/Air%20pollution%20mortality/Data_Viz)
 Contains the files to produce the data visualizations and analysis of the worldwide data.
 
 ### -data
