@@ -1,0 +1,212 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Consultar Comité
+{% endblock %}
+
+{% block main %}
+
+<form action="/web/consultar_stakeholder/comite" method="post">
+        <h4 class="d-print-inline-block">Stakeholder: </h4>
+
+        <div class="btn-group d-print-none" role="group" aria-label="Basic example">
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/congresista">Congresista</a></button>
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/org_empresarial">Organización Empresarial</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/think_tank">Think Tank</a></button>            
+            <button type="button" class = "btn btn-outline-primary btn-sm">
+                <a class = "btn btn-secondary btn-lg" href="/web/consultar_stakeholder/comite">Comité</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/otros">Otros actores</a></button>
+        </div>
+
+        <p class="d-print-none"> </p>
+        <h4 class="d-print-none">Cámara</h4>
+
+        <div class="btn-group d-print-none" role="group" aria-label="Basic example">
+            {% if camara_selected %}
+                {% if house %}
+                    <button type="button" class = "btn btn-outline-primary btn-sm">
+                        <input class = "btn btn-secondary btn-lg" type="submit" value="Cámara de Representantes" name="house"/></input></button> 
+                {% else %}
+                    <button type="button" class = "btn btn-primary btn-sm">
+                        <input class = "btn btn-primary btn-lg" type="submit" value="Cámara de Representantes" name="house"/></input></button> 
+                {% endif %}
+            {% else %}
+            <button type="button" class = "btn btn-primary btn-sm">
+                <input class = "btn btn-primary btn-lg" type="submit" value="Cámara de Representantes" name="house"/></input></button> 
+            {% endif %}
+
+            {% if camara_selected %}
+                {% if house %}
+                    <button type="button" class = "btn btn-primary btn-sm">
+                        <input class = "btn btn-primary btn-lg" type="submit" value="Senado" name="senate"/></input></button> 
+                {% else %}
+                    <button type="button" class = "btn btn-outline-primary btn-sm">
+                        <input class = "btn btn-secondary btn-lg" type="submit" value="Senado" name="senate"/></input></button> 
+                {% endif %}
+            {% else %}
+            <button type="button" class = "btn btn-primary btn-sm">
+                <input class = "btn btn-primary btn-lg" type="submit" value="Senado" name="senate"/></input></button> 
+            {% endif %}
+            
+        </div>
+
+        {% if camara_selected %}
+            {% if house %}
+                <div class="form-group">
+                    <h4 for="exampleSelect1" class="form-label mt-4 d-flex d-print-inline">Comité</h4>
+                    <select class="form-select d-print-none" id="exampleSelect1" name="comite">
+                        <option value="HSAG" selected>Agriculture</option>
+                        <option value="HSIF" selected>Energy and Commerce</option>
+                        <option value="HSSY" selected>Science, Space and Technology</option>
+                        <option value="HSWM" selected>Ways and Means</option>
+                        <option value="HSFA" selected>Foreign Affairs</option>
+                    </select>
+                </div>
+
+            {% else %}
+                <div class="form-group">
+                    <h4 for="exampleSelect1" class="form-label mt-4 d-flex d-print-inline">Comité</h4>
+                    <select class="form-select d-print-none" id="exampleSelect1" name="comite">
+                        <option value="SSAF" selected>Agriculture, Nutrition, and Forestry</option>
+                        <option value="SSCM" selected>Commerce, Science, and Transportation</option>
+                        <option value="SSEG" selected>Energy and Natural Resources</option>
+                        <option value="SSFI" selected>Finance</option>
+                        <option value="SSFR" selected>Foreign Relations</option>
+                    </select>
+                </div>
+
+            {% endif %}
+            <button type="button" class = "btn btn-primary btn-sm d-print-none">
+                <input class = "btn btn-primary" type="submit" value="Generar consulta" name="consultar"/></button>
+
+            {% if comite_info %}
+                <p> </p>
+
+                <div class="card border-primary mb-3">
+                    <div class="card-body">
+                                            
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h5>Comité: {{ comite_info['comite'] }}</h5>
+                                        <h6>Chairman: {{ comite_info['chairman'] }}</h5>
+                                        <h6>Demócratas: {{ comite_info['num_dems'] }}</h5>
+                                        <h6>Republicanos: {{ comite_info['num_reps'] }}</h5>
+                                        <span style="white-space: pre-wrap;" class="card-text">Sitio Web: </span>
+                                        <a href="{{comite_info['web']}}" target="_blank">{{ comite_info['web'] }}</a><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Subcomités</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">{{ comite_info['subcomites']}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Demócratas</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">{{ comite_info['dems']}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Republicanos</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">{{ comite_info['reps']}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Bills</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">{{ comite_info['bills']}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-primary">Top congresistas (por partido) mas interesados en los siguientes temas:</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <image src="{{ url_for('graficas_comite', graph_name = 0) }}"  alt="Image Placeholder" height="500" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <image src="{{ url_for('graficas_comite', graph_name = 1) }}"  alt="Image Placeholder" height="500" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <image src="{{ url_for('graficas_comite', graph_name = 2) }}"  alt="Image Placeholder" height="500" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <image src="{{ url_for('graficas_comite', graph_name = 3) }}"  alt="Image Placeholder" height="500" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Noticias y Medios</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">Facebook: </span>
+                                        <a href="{{comite_info['facebook']}}" target="_blank">{{ comite_info['facebook'] }}</a><br>
+                                        <span style="white-space: pre-wrap;" class="card-text">YouTube: </span>
+                                        <a href="{{comite_info['youtube']}}" target="_blank">{{ comite_info['youtube'] }}</a><br>
+                                        <span style="white-space: pre-wrap;" class="card-text">{{ comite_info['news']}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if tweets %}
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Tweets</h4>
+                                        <div class="form-floating mb-3">
+                                            <textarea type="text" class="form-control" id="tweets" name="tweets" placeholder="Tweets" rows="90" spellcheck="false" style="height: 100%;">{% for tweet in tweets %} {{tweet + '\n' + '\n'}} {% endfor %}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class = "btn btn-primary btn-sm d-print-none">
+                    <a class = "btn btn-primary" href="{{url_for('edit_cp', id_cp = id_cp, congress_person = congress_person)}}">Editar</a></button>
+                
+                <button type="button" class = "btn btn-primary btn-sm d-print-none" onclick={window.print()}>
+                    <input class = "btn btn-primary " value="Imprimir" name="imprimir"/></button>
+            {% endif %}
+
+        {% endif %}
+
+</form>
+
+
+{% endblock %}

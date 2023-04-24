@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Stakeholder
+{% endblock %}
+
+{% block main %}
+
+<form action="/web/add_stakeholder" method="post">
+        <h4>Stakeholder</h4>
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class = "btn btn-primary btn-sm"><a class = "btn btn-primary btn-lg" href="/web/add_stakeholder/org_empresarial">Organización Empresarial</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm"><a class = "btn btn-primary btn-lg" href="/web/add_stakeholder/think_tank">Think Tank</a></button>           
+            <button type="button" class = "btn btn-primary btn-sm"><a class = "btn btn-primary btn-lg" href="/web/add_stakeholder/otros">Otros Actores</a></button>
+        </div>
+</form>
+
+
+
+{%  if data != None and data|length > 0 %}
+    <div id="showData" onload="CreateTableFromJSON(data)">
+        <script>
+            CreateTableFromJSON(data);
+        </script>
+    </div>
+{% elif data != None and data|length == 0 %}
+    <div>
+        <h3>No Results found</h3>
+    </div>
+{% endif %}
+
+
+{% endblock %}

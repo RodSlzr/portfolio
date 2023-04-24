@@ -1,0 +1,476 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Consultar Stakeholder
+{% endblock %}
+
+{% block main %}
+
+<form action="/web/consultar_stakeholder/congresista" method="post">
+        <h4 class="d-print-inline-block">Stakeholder: </h4>
+
+        <div class="btn-group d-print-none" role="group" aria-label="Basic example">
+            <button type="button" class = "btn btn-outline-primary btn-sm">
+                <a class = "btn btn-secondary btn-lg" href="/web/consultar_stakeholder/congresista">Congresista</a></button>
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/org_empresarial">Organización Empresarial</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/think_tank">Think Tank</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/comite">Comité</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/otros">Otros actores</a></button>
+        </div>
+
+        <p class="d-print-none"> </p>
+        <h4 class="d-print-none">Cámara</h4>
+
+        <div class="btn-group d-print-none" role="group" aria-label="Basic example">
+            {% if camara_selected %}
+                {% if house %}
+                    <button type="button" class = "btn btn-outline-primary btn-sm">
+                        <input class = "btn btn-secondary btn-lg" type="submit" value="Cámara de Representantes" name="house"/></input></button> 
+                {% else %}
+                    <button type="button" class = "btn btn-primary btn-sm">
+                        <input class = "btn btn-primary btn-lg" type="submit" value="Cámara de Representantes" name="house"/></input></button> 
+                {% endif %}
+            {% else %}
+            <button type="button" class = "btn btn-primary btn-sm">
+                <input class = "btn btn-primary btn-lg" type="submit" value="Cámara de Representantes" name="house"/></input></button> 
+            {% endif %}
+
+            {% if camara_selected %}
+                {% if house %}
+                    <button type="button" class = "btn btn-primary btn-sm">
+                        <input class = "btn btn-primary btn-lg" type="submit" value="Senado" name="senate"/></input></button> 
+                {% else %}
+                    <button type="button" class = "btn btn-outline-primary btn-sm">
+                        <input class = "btn btn-secondary btn-lg" type="submit" value="Senado" name="senate"/></input></button> 
+                {% endif %}
+            {% else %}
+            <button type="button" class = "btn btn-primary btn-sm">
+                <input class = "btn btn-primary btn-lg" type="submit" value="Senado" name="senate"/></input></button> 
+            {% endif %}
+            
+        </div>
+
+        {% if camara_selected %}
+            {% if house %}
+                <div class="form-group">
+                    <h4 for="exampleSelect1" class="form-label mt-4 d-flex d-print-inline">Congresista</h4>
+                    <select class="form-select d-print-none" id="exampleSelect1" name="congresista">
+                        <option value="{{lista_camara[0]}}" selected>{{lista_camara[0]}}</option>
+                        {% for nombre_congresista in lista_camara[1:] %}
+                            <option value="{{nombre_congresista}}">{{nombre_congresista}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+            {% else %}
+                <div class="form-group">
+                    <h4 for="exampleSelect1" class="form-label mt-4 d-flex d-print-inline">Miembro del senado</h4>
+                    <select class="form-select d-print-none" id="exampleSelect1" name="senador">
+                        <option value="{{lista_senado[0]}}" selected>{{lista_senado[0]}}</option>
+                        {% for nombre_senador in lista_senado[1:] %}
+                            <option value="{{nombre_senador}}">{{nombre_senador}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+            {% endif %}
+            <button type="button" class = "btn btn-primary btn-sm d-print-none">
+                <input class = "btn btn-primary" type="submit" value="Generar consulta" name="consultar"/></button>
+
+            {% if congress_person %}
+                <p> </p>
+
+                <div class="card border-primary mb-3">
+                    <div class="card-body">
+                                            
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h5>{{ congress_person }}</h5>
+                                        <h5>Distrito: {{ basic_info['roles'][0]['district'] }}</h5>
+                                        <image src="{{url_for('static',filename = 'bio_pics/{}.jpg'.format(id_cp))}}" ></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Biografía</h4>
+                                        <p class="card-text">{{ basic_info['text']}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Comentarios</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">{{ congresista_info['comments'] }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Bitácora Histórica</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">{{ congresista_info['bitacora'] }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 
+                            <div class="col-sm-12">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Fuentes</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">{{ congresista_info['fuentes'] }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                            <div class="col-sm-12">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-primary">Sección política</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <image src="{{ url_for('grafica_espectro_politico', graph_name = 'graph_ideology') }}"  alt="Image Placeholder" height="300" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Historial</h4>
+                                        <p class="card-text">1° vez elegido: {{ funding['summary']['first_elected'] }}</p>
+                                        <p class="card-text">Seniority: {{ basic_info['roles'][0]['seniority'] }}</p>
+                                        <p class="card-text">Inicio del cargo: {{ basic_info['roles'][0]['start_date'] }}</p>
+                                        <p class="card-text">Fin del cargo: {{ basic_info['roles'][0]['end_date'] }}</p>
+                                        <p class="card-text">Siguiente elección: {{ funding['summary']['next_election'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Financiamiento de Campaña</h4>
+                                        {% set fund_total = funding['summary']['total'] | int %}
+                                        <p class="card-text">Recaudado: {{ "${:,.0f}".format(fund_total) }}</p>
+                                        {% set fund_spent = funding['summary']['spent'] | int %}
+                                        <p class="card-text">Gastado: {{ "${:,.0f}".format(fund_spent) }}</p>
+                                        {% set fund_cash = funding['summary']['cash_on_hand'] | int %}
+                                        <p class="card-text">En caja: {{ "${:,.0f}".format(fund_cash) }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Elecciones</h4>
+                                        <image src="{{ url_for('grafica_vot_hist', graph_name = 'vot_hist') }}"  alt="Image Placeholder" height="250" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Comités</h4>
+                                        {% for comite in basic_info['commite_lst'] %}
+                                            <p class="card-text">{{ comite }}</p>
+                                        {% endfor %}
+                                        <h4 class="card-title">Subcomités</h4>
+                                        {% for subcomite in basic_info['subcommite_lst'] %}
+                                            <p class="card-text">{{ subcomite }}</p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Bills</h4>
+                                        <p class="card-text">Sponsored: {{ basic_info['roles'][0]['bills_sponsored']}}</p>
+                                        <p class="card-text">Cosponsored: {{ basic_info['roles'][0]['bills_cosponsored']}}</p>
+                                        <h4 class="card-title">Votos</h4>
+                                        <p class="card-text">Total: {{ basic_info['roles'][0]['total_votes']}}</p>
+                                        <p class="card-text">Perdidos: {{ basic_info['roles'][0]['missed_votes']}} ({{ basic_info['roles'][0]['missed_votes_pct']}}%)</p>
+                                        <p class="card-text">Con el partido: {{ basic_info['roles'][0]['votes_with_party_pct']}}%</p>
+                                        <p class="card-text">Contra el partido: {{ basic_info['roles'][0]['votes_against_party_pct']}}%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <image src="{{ url_for('grafica_funding', graph_name = 'graph_funding') }}"  alt="Image Placeholder" height="900" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <image src="{{ url_for('grafica_topics_of_interest', graph_name = 'graph_topics_of_interest') }}"  alt="Image Placeholder" height="750" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <image src="{{ url_for('grafica_pie_econ_2', graph_name = 'pie_econ_graph') }}"  alt="Image Placeholder" height="700" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-primary">Sección comercial y económica</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Top EXP-IMP</h4>
+                                        <image src="{{ url_for('grafica_top_exp_imp', graph_name = 0) }}"  alt="Image Placeholder" height="500" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Top EXP-IMP Netas</h4>
+                                        <image src="{{ url_for('grafica_top_exp_imp', graph_name = 1) }}"  alt="Image Placeholder" height="500" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Top EXP-IMP Empleos</h4>
+                                        <image src="{{ url_for('grafica_top_exp_imp', graph_name = 2) }}"  alt="Image Placeholder" height="500" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Empleados por Industria</h4>
+                                        <image src="{{ url_for('grafica_pie_econ', graph_name = 'pie_econ_graph') }}"  alt="Image Placeholder" height="500" width="100%"></image>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Exp-Imp Estatal</h4>
+                                        {% set exp_total = economics['COMMERCIAL']['state_census']['EXP_TOT']/1000000 | int %}
+                                        <p class="card-text">Exp-Total mundial: {{ "${:,.0f}".format(exp_total) }}M</p>
+                                        {% set exp_a_mex = economics['COMMERCIAL']['state_census']['EXP_MEX']/1000000 | int %}
+                                        <p class="card-text">Exp a Mex: {{ "${:,.0f}".format(exp_a_mex) }}M ({{ "{:,.1f}".format(exp_a_mex/exp_total*100) }}%)</p>
+                                        {% set imp_total = economics['COMMERCIAL']['state_census']['IMP_TOT']/1000000 | int %}
+                                        <p class="card-text">Imp-Total mundial: {{ "${:,.0f}".format(imp_total) }}M</p>
+                                        {% set imp_d_mex = economics['COMMERCIAL']['state_census']['IMP_MEX']/1000000 | int %}
+                                        <p class="card-text">Imp de Mex: {{ "${:,.0f}".format(imp_d_mex) }}M ({{ "{:,.1f}".format(imp_d_mex/imp_total*100) }}%)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Exp-Empleo Estatal (Trade Partnership)</h4>
+                                        {% set exp_total_tp = economics['COMMERCIAL']['state_nafta']['World']/1000000 | int %}
+                                        <p class="card-text">Exp-Total mundial: {{ "${:,.0f}".format(exp_total_tp) }}M</p>
+                                        {% set exp_a_mex_tp = economics['COMMERCIAL']['state_nafta']['Mexico']/1000000 | int %}
+                                        <p class="card-text">Exp a Mex: {{ "${:,.0f}".format(exp_a_mex_tp) }}M ({{ "{:,.1f}".format(exp_a_mex_tp/exp_total_tp*100) }}%)</p>
+                                        <p class="card-text">Empleos por exportaciones a Mex: {{ "{:,.0f}".format(economics['COMMERCIAL']['state_nafta']['Total Jobs']) }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Ingreso de los hogares del estado</h4>
+                                        {% set mean_income = economics['Estimate']['INCOME AND BENEFITS (IN 2020 INFLATION-ADJUSTED DOLLARS)']['Total households']['Mean household income (dollars)']['state'] | int %}
+                                        <p class="card-text">Promedio: {{ "${:,.0f}".format(mean_income) }}</p>
+                                        {% set median_income = economics['Estimate']['INCOME AND BENEFITS (IN 2020 INFLATION-ADJUSTED DOLLARS)']['Total households']['Median household income (dollars)']['state'] | int %}
+                                        <p class="card-text">Mediana: {{ "${:,.0f}".format(median_income) }}</p>
+                                        {% set per_capita_income = economics['Estimate']['INCOME AND BENEFITS (IN 2020 INFLATION-ADJUSTED DOLLARS)']['Per capita income (dollars)']['state'] | int %}
+                                        <p class="card-text">Per capita: {{ "${:,.0f}".format(per_capita_income) }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if house %}
+                                <div class="col-sm-3">
+                                    <div class="card mb-1 h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Exp-Empleo Distrital (Trade Partnership)</h4>
+                                            {% set exp_total_tp = economics['COMMERCIAL']['district']['World']/1000000 | int %}
+                                            <p class="card-text">Exp-Total mundial: {{ "${:,.0f}".format(exp_total_tp) }}M</p>
+                                            {% set exp_a_mex_tp = economics['COMMERCIAL']['district']['Mexico']/1000000 | int %}
+                                            <p class="card-text">Exp a Mex: {{ "${:,.0f}".format(exp_a_mex_tp) }}M ({{ "{:,.1f}".format(exp_a_mex_tp/exp_total_tp*100) }}%)</p>
+                                            <p class="card-text">Empleos por exportaciones a Mex: {{ "{:,.0f}".format(economics['COMMERCIAL']['district']['Total Jobs']) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="card mb-1 h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Ingreso de los hogares del distrito</h4>
+                                            {% set mean_income = economics['Estimate']['INCOME AND BENEFITS (IN 2020 INFLATION-ADJUSTED DOLLARS)']['Total households']['Mean household income (dollars)']['district'] | int %}
+                                            <p class="card-text">Promedio: {{ "${:,.0f}".format(mean_income) }}</p>
+                                            {% set median_income = economics['Estimate']['INCOME AND BENEFITS (IN 2020 INFLATION-ADJUSTED DOLLARS)']['Total households']['Median household income (dollars)']['district'] | int %}
+                                            <p class="card-text">Mediana: {{ "${:,.0f}".format(median_income) }}</p>
+                                            {% set per_capita_income = economics['Estimate']['INCOME AND BENEFITS (IN 2020 INFLATION-ADJUSTED DOLLARS)']['Per capita income (dollars)']['district'] | int %}
+                                            <p class="card-text">Per capita: {{ "${:,.0f}".format(per_capita_income) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            <div class="col-sm-12">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-primary">Datos de contacto y prensa</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Contacto</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">Dir: {{ basic_info['congress_office'] }} of: {{ basic_info['office'] }}</span><br>
+                                        <span style="white-space: pre-wrap;" class="card-text">Tel: {{ basic_info['phone'] }}</span><br>
+                                        <span style="white-space: pre-wrap;" class="card-text">Fax: {{ basic_info['fax'] }}</span><br>
+                                        <span style="white-space: pre-wrap;" class="card-text">Form: </span>
+                                        <a href="{{basic_info['webform']}}" target="_blank">{{ basic_info['webform'] }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Staffers</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">{{ congresista_info['staffers'] }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Redes Sociales</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">Web: </span>
+                                        <a href="{{basic_info['url']}}" target="_blank">{{ basic_info['url'] }}</a><br>
+                                        <span style="white-space: pre-wrap;" class="card-text">Twitter: {{ basic_info['twitter_account'] }}</span><br>
+                                        <span style="white-space: pre-wrap;" class="card-text">YouTube: {{ basic_info['youtube_account'] }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Prensa</h4>
+                                        <span style="white-space: pre-wrap;" class="card-text">NYT: </span>
+                                        <a href="{{basic_info['times_topics_url']}}" target="_blank">{{ basic_info['times_topics_url'] }}</a><br>
+                                        <span style="white-space: pre-wrap;" class="card-text">RSS: </span>
+                                        <a href="{{basic_info['rss_url']}}" target="_blank">{{ basic_info['rss_url'] }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if basic_info['rss_url'] is not none %}
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">RSS</h4>
+                                        <div class="form-floating mb-3">
+                                            <textarea type="text" class="form-control" id="tweets" name="tweets" placeholder="Tweets" rows="50" spellcheck="false" style="height: 100%;">{% for rss_new in rss_news %} {{rss_new + '\n' + '\n'}} {% endfor %}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Tweets</h4>
+                                        <div class="form-floating mb-3">
+                                            <textarea type="text" class="form-control" id="tweets" name="tweets" placeholder="Tweets" rows="90" spellcheck="false" style="height: 100%;">{% for tweet in tweets %} {{tweet + '\n' + '\n'}} {% endfor %}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="card mb-1 h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Bills relevantes</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-responsive table-hover table-striped">
+                                <thead class="thead-dark">
+                                  <tr>
+                                        <th scope="col">Estatus</th>
+                                        <th scope="col">ID</th>
+                                        <th scope="col"> ..........................Título.......................... </th>
+                                        <th scope="col">Título corto</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Tópico</th>
+                                        <th scope="col">Comité</th>
+                                        <th scope="col">............................Resumen............................</th>
+                                        <th scope="col">........................Resumen_corto........................</th>
+                                        <th scope="col">Responsable</th>
+                                        <th scope="col">Prom Dems</th>
+                                        <th scope="col">Prom Reps</th>
+                                        <th scope="col">Prom Otros</th>
+                                        <th scope="col">URL</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    {% for head, data in relevant_df.iterrows() %}
+                                        <tr class="table-secondary">
+                                            <td>{{ data[0] }}</td>
+                                            <td>{{ data[1] }}</td>
+                                            <td>{{ data[2] }}</td>
+                                            <td>{{ data[3] }}</td>
+                                            <td>{{ data[4] }}</td>
+                                            <td>{{ data[5] }}</td>
+                                            <td>{{ data[6] }}</td>
+                                            <td><button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample_9" aria-expanded="true" aria-controls="collapseExample_9">
+                                                    Resumen </button>
+                                            <div class="collapse" id="collapseExample_9"> <div class="card card-body"> {{data[7]}} </div></div></td>
+                                            <td><button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample_9" aria-expanded="true" aria-controls="collapseExample_9">
+                                                    Resumen Corto </button>
+                                            <div class="collapse" id="collapseExample_9"> <div class="card card-body"> {{data[8]}} </div></div></td>
+                                            <td>{{ data[9] }}</td>
+                                            <td>{{ data[10] }}</td>
+                                            <td>{{ data[11] }}</td>
+                                            <td>{{ data[12] }}</td>
+                                            <td> <a href="{{ data[13] }}" target="_blank"> {{ data[13] }} </a></td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class = "btn btn-primary btn-sm d-print-none">
+                    <a class = "btn btn-primary" href="{{url_for('edit_cp', id_cp = id_cp, congress_person = congress_person)}}">Editar</a></button>
+                
+                <button type="button" class = "btn btn-primary btn-sm d-print-none" onclick={window.print()}>
+                    <input class = "btn btn-primary " value="Imprimir" name="imprimir"/></button>
+
+                    
+            {% endif %}
+
+        {% endif %}
+
+</form>
+
+
+{% endblock %}

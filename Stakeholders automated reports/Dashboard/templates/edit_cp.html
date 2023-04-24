@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Congress Person
+{% endblock %}
+
+{% block main %}
+
+{% if subm == "not yet" %}
+<form action="{{url_for('edit_cp', id_cp=id_cp, congress_person=congress_person)}}" enctype="multipart/form-data" class="needs-validation" method="post">
+        <h4>Stakeholder</h4>
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class = "btn btn-primary btn-lg">Congresista</button>
+        </div>
+
+        <p></p>
+        <h4 class="d-flex">Fuentes de información</h4>
+        <div class="form-floating mb-3">
+            <textarea type="text" class="form-control" id="fuentes" name="fuentes" placeholder="Fuentes" rows="3" spellcheck="false" style="height: 140px;">{{ congresista_info['fuentes'] }}</textarea>
+            <label for="fuentes">Pegue los links o indique la fuente de donde obtiene la información para futuras actualizaciones</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <textarea type="text" class="form-control" id="comments" name="comments" placeholder="comentarios" rows="3" spellcheck="false" style="height: 140px;">{{ congresista_info['comments'] }}</textarea>
+            <label for="comments">Comentarios adicionales</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <textarea type="text" class="form-control" id="bitacora" name="bitacora" placeholder="bitacora" rows="3" spellcheck="false" style="height: 140px;">{{ congresista_info['bitacora'] }}</textarea>
+            <label for="bitacora">Bitácora Histórica</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <textarea type="text" class="form-control" id="staffers" name="staffers" placeholder="staffers" rows="3" spellcheck="false" style="height: 140px;">{{ congresista_info['staffers'] }}</textarea>
+            <label for="bitacora">Staffers</label>
+        </div>
+
+        <button type="button" class = "btn btn-primary btn-sm">
+            <input class = "btn btn-primary btn-lg" type="submit" value="Actualizar Congresista" name="nuevo_cp"/></button> 
+
+</form>
+
+{% elif subm == "successful" %}
+<div class="card text-white bg-success mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ resp }}</h5>
+    </div>
+</div>
+
+{% else %}
+<div class="card text-white bg-danger mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ resp }}</h5>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}

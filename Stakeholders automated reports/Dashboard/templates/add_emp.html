@@ -1,0 +1,268 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Organizaciones Empresariales
+{% endblock %}
+
+{% block main %}
+
+{% if subm == "not yet" %}
+<form action="/web/add_stakeholder/think_tank" enctype="multipart/form-data" class="needs-validation" method="post">
+        <h4>Stakeholder</h4>
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/add_stakeholder/org_empresarial">Organización Empresarial</a></button>            
+            <button type="button" class = "btn btn-outline-primary btn-sm">
+                <a class = "btn btn-secondary btn-lg" href="/web/add_stakeholder/think_tank">Think Tank</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/add_stakeholder/otros">Otros Actores</a></button>
+        </div>
+
+        <p></p>
+        <h4 class="d-flex">Información general</h4>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" required>
+            <label for="nombre">Nombre</label>
+            <div class="invalid-feedback d-block d-flex">Campo obligatorio</div>
+        </div>
+
+        <div class="form-group">
+            <label for="formFile" class="form-label mt-4 d-flex">Logo de la Organización Empresarial</label>
+            <input class="form-control" type="file" id="formFile" name="logo_tt">
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="acronimo" name="acronimo" placeholder="Acrónimo">
+            <label for="sitio">Acrónimo</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="industria" name="industria"  placeholder="Industria">
+            <label for="sitio">Industria</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="hs" name="hs" placeholder="HS (ejemplo: HS2_01,04,05,15 )">
+            <label for="sitio">HS (ejemplo: HS2_01,04,05,15 )</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="miembros" name="miembros" placeholder="Miembros">
+            <label for="sitio">Miembros</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="ubicacion" name="ubicacion" placeholder="Ubicación">
+            <label for="sitio">Ubicación</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <textarea type="text" class="form-control" id="desc" name="desc" placeholder="Descripción" rows="3" spellcheck="false" style="height: 140px;"></textarea>
+            <label for="desc">Descripción</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <textarea type="text" class="form-control" id="comments" name="comments" placeholder="comentarios" rows="3" spellcheck="false" style="height: 140px;"></textarea>
+            <label for="comments">Comentarios adicionales</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="sitio" name="sitio" placeholder="Sitio">
+            <label for="sitio">Sitio web</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="facebook" name="facebook" placeholder="Página de Facebook">
+            <label for="sitio">Página de Facebook</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="youtube" name="youtube" placeholder="Página de YouTube">
+            <label for="sitio">Página de YouTube</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="user_tw" name="user_tw" placeholder="Usuario de twitter (no incluir @)">
+            <label for="contacto">Usuario de twitter (no incluir @)</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="contacto" name="contacto" placeholder="Contacto general">
+            <label for="contacto">Contacto general</label>
+        </div>
+
+        <h4 class="d-flex">Contacto de trade</h4>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="nombre_trade" name="nombre_trade" placeholder="Nombre">
+            <label for="nombre_trade">Nombre</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="puesto_trade" name="puesto_trade" placeholder="Puesto">
+            <label for="puesto_trade">Puesto</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="correo_trade" name="correo_trade"  placeholder="Correo">
+            <label for="correo_trade">Correo</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="telefono_trade" name="telefono_trade"  placeholder="Teléfono">
+            <label for="telefono_trade">Teléfono</label>
+        </div>
+
+        <h4 class="d-flex">Temas que trabajan</h4>
+
+        <div class="form-floating mb-3">
+            <textarea type="text" class="form-control" id="temas" name="temas" placeholder="Temas" rows="1" spellcheck="false" style="height: 140px;"></textarea>
+            <label for="temas">Separe los temas con comas</label>
+        </div>
+
+        <h4 class="d-flex">Posición política</h4>
+
+        <div class="form-check d-flex">
+            <input class="form-check-input" type="checkbox" value="democrata" name="democrata" id="democrata">
+            <label class="form-check-label" for="Demócrata">
+              Demócrata
+            </label>
+        </div>
+
+        <div class="form-check d-flex">
+            <input class="form-check-input" type="checkbox" value="republicano" name="republicano" id="republicano">
+            <label class="form-check-label" for="Republicano">
+              Republicano
+            </label>
+        </div>
+
+        <div class="form-check d-flex">
+            <input class="form-check-input" type="checkbox" value="conservador" name="conservador" id="Conservador">
+            <label class="form-check-label" for="Conservador">
+              Conservador
+            </label>
+        </div>
+
+        <div class="form-check d-flex">
+            <input class="form-check-input" type="checkbox" value="centro" name="centro" id="Centro">
+            <label class="form-check-label" for="Centro">
+              Centro
+            </label>
+        </div>
+
+        <div class="form-check d-flex">
+            <input class="form-check-input" type="checkbox" value="liberal" name="liberal" id="Liberal">
+            <label class="form-check-label" for="Liberal">
+              Liberal
+            </label>
+        </div>
+
+        <div class="form-check d-flex">
+            <input class="form-check-input" type="checkbox" value="progresista" name="progresista" id="Progresista">
+            <label class="form-check-label" for="Progresista">
+              Progresista
+            </label>
+        </div>
+
+        <div class="form-check d-flex">
+            <input class="form-check-input" type="checkbox" value="libertario" name="libertario" id="Libertario">
+            <label class="form-check-label" for="Libertario">
+              Libertario
+            </label>
+        </div>
+
+        <div class="form-check d-flex">
+            <input class="form-check-input" type="checkbox" value="independiente" name="independiente" id="Independiente">
+            <label class="form-check-label" for="Independiente">
+              Independiente
+            </label>
+        </div>
+
+        <h4 class="d-flex">Financiamiento a congresistas</h4>
+
+        <div class="form-check d-flex">
+            <input class="form-check-input" type="checkbox" value="Sí" name="fin_disp" id="fin_disp" checked="">
+            <label class="form-check-label" for="Independiente">
+              Dato de financiemiento disponible
+            </label>
+        </div>
+
+        <div class="form-floating mb-3 form-group has-danger">
+            <input type="text" class="form-control" id="fin_total" name="fin_total"  placeholder="Teléfono">
+            <label for="fin_total">Total en USD</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="fin_dem" name="fin_dem"  placeholder="Teléfono">
+            <label for="fin_dem">Total a Demócratas en USD</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="fin_rep" name="fin_rep"  placeholder="Teléfono">
+            <label for="fin_rep">Total a Republicanos en USD</label>
+        </div>
+
+        <div class="form-check d-flex">
+            <input class="form-check-input" type="checkbox" value="Sí" name="lobbying_disp" id="lobbying_disp" checked="">
+            <label class="form-check-label" for="Independiente">
+                Dato de financiemiento a lobbying disponible
+            </label>
+        </div>
+
+        <div class="form-floating mb-3 form-group has-danger">
+            <input type="text" class="form-control" id="lobbying_total" name="lobbying_total" placeholder="Total a Lobbying">
+            <label for="lobbying_total">Total a Lobbying</label>
+        </div>
+
+        <h4 class="d-flex">Información Comercial</h4>
+
+        <div class="form-floating mb-3 form-group has-danger">
+            <input type="text" class="form-control" id="exp_mex" name="exp_mex" placeholder="Exportaciones a México">
+            <label for="exp_mex">Exportaciones a México</label>
+        </div>
+
+        <div class="form-floating mb-3 form-group has-danger">
+            <input type="text" class="form-control" id="mkt_share" name="mkt_share" placeholder="Market Share">
+            <label for="mkt_share">Market Share</label>
+        </div>
+
+        <div class="form-floating mb-3 form-group has-danger">
+            <input type="text" class="form-control" id="empleos" name="empleos" placeholder="Empleos">
+            <label for="empleos">Empleos</label>
+        </div>
+
+        <div class="form-floating mb-3 form-group has-danger">
+            <input type="text" class="form-control" id="edos_op" name="edos_op" placeholder="Estados en los que opera">
+            <label for="edos_op">Estados en los que opera</label>
+        </div>
+
+        <h4 class="d-flex">Estudios y Publicaciones</h4>
+
+        <div class="form-floating mb-3">
+            <textarea type="text" class="form-control" id="estudios" name="estudios" placeholder="Estudios" rows="1" spellcheck="false" style="height: 140px;"></textarea>
+            <label for="estudios">Incluya título, autor, año y link</label>
+        </div>
+
+        <button type="button" class = "btn btn-primary btn-sm">
+            <input class = "btn btn-primary btn-lg" type="submit" value="Agregar Organización Empresarial" name="nuevo_emp"/></button> 
+
+</form>
+
+{% elif subm == "successful" %}
+<div class="card text-white bg-success mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ resp }}</h5>
+    </div>
+</div>
+
+{% else %}
+<div class="card text-white bg-danger mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ resp }}</h5>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}

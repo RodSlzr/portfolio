@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Consultar Organizaciones Empresariales
+{% endblock %}
+
+{% block main %}
+
+<form action="/web/consultar_stakeholder/org_empresarial" method="post">
+        <h4 class="d-print-inline-block">Stakeholder: </h4>
+
+        <div class="btn-group d-print-none" role="group" aria-label="Basic example">
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/congresista">Congresista</a></button>
+            <button type="button" class = "btn btn-outline-primary btn-sm">
+                <a class = "btn btn-secondary btn-lg" href="/web/consultar_stakeholder/org_empresarial">Organización Empresarial</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/think_tank">Think Tank</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/comite">Comité</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/otros">Otros actores</a></button>
+        </div>
+
+        <p class="d-print-inline"> </p>
+        <div class="form-group d-print-none">
+            <label for="exampleSelect1" class="d-flex lead">Seleccione la Organización Empresarial que desea consultar</label>
+            <select class="form-select " id="exampleSelect1" name="org_emp">
+                <option value="{{emps[0]}}" selected>{{emps[0]}}</option>
+                {% for emp in emps[1:] %}
+                    <option value="{{emp}}">{{emp}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="button" class = "btn btn-primary btn-sm d-print-none">
+            <input class = "btn btn-primary" type="submit" value="Generar consulta ejecutiva" name="emp_selected"/></button>
+        
+        <button type="button" class = "btn btn-primary btn-sm d-print-none">
+            <input class = "btn btn-primary" type="submit" value="Generar consulta detallada" name="emp_selected_det"/></button>
+
+        {% if genera_reporte or detalles %}
+            <p class="d-print-inline"> </p>
+            <h3 class="d-flex d-print-inline-block justify-content-center">{{ emp }}</h3>
+
+            <div class="card border-primary mb-3 ">
+                <div class="card-body">
+                                        
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">                                   
+                                    <image src="{{logo}}"  height="200" width="100%"></image>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <span style="white-space: pre-wrap;" class="card-text">Acrónimo: {{ emp_info['acronimo'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Industria: {{ emp_info['industria'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Miembros: {{ emp_info['miembros'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Ubicación: {{ emp_info['ubicacion'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Operación: {{ emp_info['edos_op'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Descripción: {{ emp_info['desc'] }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Contacto</h4>
+                                    <a href="{{emp_info['web']}}" target="_blank">{{ emp_info['web'] }}</a>
+                                    <a href="mailto:{{emp_info['contacto_g']}}" target="_blank">{{ emp_info['contacto_g'] }}</a>
+                                    <a href="{{emp_info['web']}}" target="_blank">{{ emp_info['facebook'] }}</a>
+                                    <a href="{{emp_info['web']}}" target="_blank">{{ emp_info['youtube'] }}</a>
+                                    <h4 class="card-title">Contacto Trade</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ emp_info['contacto_t_nombre'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Puesto: </span>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ emp_info['contacto_t_puesto'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Correo: </span>
+                                    <a href="mailto:{{emp_info['contacto_t_correo']}}" target="_blank">{{ emp_info['contacto_t_correo'] }}</a><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Tel: </span>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ emp_info['contacto_t_tel'] }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Temas</h4>
+                                    {% for tema in emp_info['temas'].split(',') %}
+                                        <span class="badge rounded-pill bg-light">{{ tema }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Posición Política</h4>
+                                    {% for posicion in emp_info['posicion_pol'].split(',') %}
+                                        <span class="badge rounded-pill bg-light">{{ posicion }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Contribuciones a partidos</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">Total: {{ emp_info['fin_total'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Demócratas: {{ emp_info['fin_dem'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Republicanos: {{ emp_info['fin_rep'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Lobbying: {{ emp_info['lobbying_total'] }}</span><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <image src="{{ url_for('graficas_emps', graph_name = emp_info['hs']) }}"  alt="Image Placeholder" height="500" width="100%"></image>
+                                    <!-- <image src="{{ url_for('graficas_emps', graph_name = emp_info['hs']) }}"  alt="Image Placeholder" height="500" width="100%"></image>
+                                    <image src="{{url_for('static',filename = 'bio_pics/{}.jpg'.format(id_cp))}}" ></image> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Comentarios</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ emp_info['comments'] }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Estudios</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ emp_info['estudios'] }}</span><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Tweets</h4>
+                                    <div class="form-floating mb-3">
+                                        <textarea type="text" class="form-control" id="tweets" name="tweets" placeholder="Tweets" rows="90" spellcheck="false" style="height: 100%;">{% for tweet in tweets %} {{tweet + '\n' + '\n'}} {% endfor %}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if detalles %}
+                        <!--
+                        <div class="col-sm-12">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Fuentes</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ emp_info['fuentes'] }}</span><br>
+                                </div>
+                            </div>
+                        </div> 
+                        -->
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class = "btn btn-primary btn-sm d-print-none">
+                <a class = "btn btn-primary" href="{{url_for('edit_emp', name = emp)}}">Editar</a></button>
+
+            <button type="button" class = "btn btn-primary btn-sm d-print-none" onclick={window.print()}>
+                <input class = "btn btn-primary " value="Imprimir" name="imprimir"/></button>
+            
+            
+        {% endif %}
+
+</form>
+
+
+{% endblock %}

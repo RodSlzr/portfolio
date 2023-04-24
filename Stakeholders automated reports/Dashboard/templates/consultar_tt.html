@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Consultar Stakeholder
+{% endblock %}
+
+{% block main %}
+
+<form action="/web/consultar_stakeholder/think_tank" method="post">
+        <h4 class="d-print-inline-block">Stakeholder: </h4>
+
+        <div class="btn-group d-print-none" role="group" aria-label="Basic example">
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/congresista">Congresista</a></button>
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/org_empresarial">Organización Empresarial</a></button>            
+            <button type="button" class = "btn btn-outline-primary btn-sm">
+                <a class = "btn btn-secondary btn-lg" href="/web/consultar_stakeholder/think_tank">Think Tank</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/comite">Comité</a></button>            
+            <button type="button" class = "btn btn-primary btn-sm">
+                <a class = "btn btn-primary btn-lg" href="/web/consultar_stakeholder/otros">Otros actores</a></button>
+        </div>
+
+        <p class="d-print-inline"> </p>
+        <div class="form-group d-print-none">
+            <label for="exampleSelect1" class="d-flex lead">Seleccione el Think Tank que desea consultar</label>
+            <select class="form-select " id="exampleSelect1" name="think tank">
+                <option value="{{think_tanks[0]}}" selected>{{think_tanks[0]}}</option>
+                {% for think_tank in think_tanks[1:] %}
+                    <option value="{{think_tank}}">{{think_tank}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="button" class = "btn btn-primary btn-sm d-print-none">
+            <input class = "btn btn-primary" type="submit" value="Generar consulta ejecutiva" name="tt_selected"/></button>
+        
+        <button type="button" class = "btn btn-primary btn-sm d-print-none">
+            <input class = "btn btn-primary" type="submit" value="Generar consulta detallada" name="tt_selected_det"/></button>
+
+        {% if genera_reporte or detalles %}
+            <p class="d-print-inline"> </p>
+            <h3 class="d-flex d-print-inline-block justify-content-center">{{ think_tank }}</h3>
+
+            <div class="card border-primary mb-3 ">
+                <div class="card-body">
+                                        
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">                                
+                                    <image src="{{logo}}"  height="200" width="100%"></image>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ think_tank }}</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ think_tank_info['desc'] }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Contacto</h4>
+                                    <a href="{{think_tank_info['web']}}" target="_blank">{{ think_tank_info['web'] }}</a>
+                                    <a href="mailto:{{think_tank_info['contacto_g']}}" target="_blank">{{ think_tank_info['contacto_g'] }}</a>
+                                    <h4 class="card-title">Contacto Trade</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ think_tank_info['contacto_t_nombre'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Puesto: </span>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ think_tank_info['contacto_t_puesto'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Correo: </span>
+                                    <a href="mailto:{{think_tank_info['contacto_t_correo']}}" target="_blank">{{ think_tank_info['contacto_t_correo'] }}</a><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Tel: </span>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ think_tank_info['contacto_t_tel'] }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Temas</h4>
+                                    {% for tema in think_tank_info['temas'].split(',') %}
+                                        <span class="badge rounded-pill bg-light">{{ tema }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Posición Política</h4>
+                                    {% for posicion in think_tank_info['posicion_pol'].split(',') %}
+                                        <span class="badge rounded-pill bg-light">{{ posicion }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Contribuciones a partidos</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">Total: {{ think_tank_info['fin_total'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Demócratas: {{ think_tank_info['fin_dem'] }}</span><br>
+                                    <span style="white-space: pre-wrap;" class="card-text">Republicanos: {{ think_tank_info['fin_rep'] }}</span><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Comentarios</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ think_tank_info['comments'] }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Estudios</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ think_tank_info['estudios'] }}</span><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Tweets</h4>
+                                    <div class="form-floating mb-3">
+                                        <textarea type="text" class="form-control" id="tweets" name="tweets" placeholder="Tweets" rows="90" spellcheck="false" style="height: 100%;">{% for tweet in tweets %} {{tweet + '\n' + '\n'}} {% endfor %}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if detalles %}
+                        <div class="col-sm-12">
+                            <div class="card mb-1 h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Fuentes</h4>
+                                    <span style="white-space: pre-wrap;" class="card-text">{{ think_tank_info['fuentes'] }}</span><br>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class = "btn btn-primary btn-sm d-print-none">
+                <a class = "btn btn-primary" href="{{url_for('edit_tt', name = think_tank)}}">Editar</a></button>
+
+            <button type="button" class = "btn btn-primary btn-sm d-print-none" onclick={window.print()}>
+                <input class = "btn btn-primary " value="Imprimir" name="imprimir"/></button>
+            
+            
+        {% endif %}
+
+</form>
+
+
+{% endblock %}
