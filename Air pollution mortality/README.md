@@ -8,7 +8,7 @@ Pandas, NumPy, ARIMA, PyTorch, Matplotlib, and Plotly
 
 ## Files Structure
 
-### -Data Viz
+### -Data Viz (Independent Project, same data source)
 Contains the files to produce the data visualizations and analysis of the worldwide data.
 
 ### -data
