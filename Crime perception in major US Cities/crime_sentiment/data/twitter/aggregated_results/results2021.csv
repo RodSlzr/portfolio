@@ -1,0 +1,120 @@
+near,Category,sentiment,Score_cat
+austin,addictions,Negative,50
+austin,addictions,Neutral,410
+austin,addictions,Positive,13
+austin,crimes,Negative,3211
+austin,crimes,Neutral,7181
+austin,crimes,Positive,682
+austin,guns,Negative,20
+austin,guns,Neutral,157
+austin,guns,Positive,4
+austin,hate,Negative,31
+austin,hate,Neutral,81
+austin,hate,Positive,7
+chicago,addictions,Negative,54
+chicago,addictions,Neutral,549
+chicago,addictions,Positive,23
+chicago,crimes,Negative,4463
+chicago,crimes,Neutral,9272
+chicago,crimes,Positive,1026
+chicago,guns,Negative,17
+chicago,guns,Neutral,198
+chicago,guns,Positive,5
+chicago,hate,Negative,57
+chicago,hate,Neutral,81
+chicago,hate,Positive,6
+dallas,addictions,Negative,51
+dallas,addictions,Neutral,409
+dallas,addictions,Positive,15
+dallas,crimes,Negative,4046
+dallas,crimes,Neutral,7464
+dallas,crimes,Positive,818
+dallas,guns,Negative,20
+dallas,guns,Neutral,149
+dallas,guns,Positive,2
+dallas,hate,Negative,38
+dallas,hate,Neutral,88
+dallas,hate,Positive,5
+houston,addictions,Negative,60
+houston,addictions,Neutral,391
+houston,addictions,Positive,14
+houston,crimes,Negative,4625
+houston,crimes,Neutral,7593
+houston,crimes,Positive,829
+houston,guns,Negative,12
+houston,guns,Neutral,173
+houston,guns,Positive,2
+houston,hate,Negative,58
+houston,hate,Neutral,91
+houston,hate,Positive,7
+los angeles,addictions,Negative,68
+los angeles,addictions,Neutral,450
+los angeles,addictions,Positive,10
+los angeles,crimes,Negative,4265
+los angeles,crimes,Neutral,8323
+los angeles,crimes,Positive,864
+los angeles,guns,Negative,20
+los angeles,guns,Neutral,158
+los angeles,guns,Positive,4
+los angeles,hate,Negative,58
+los angeles,hate,Neutral,97
+los angeles,hate,Positive,6
+new york city,addictions,Negative,55
+new york city,addictions,Neutral,479
+new york city,addictions,Positive,12
+new york city,crimes,Negative,4417
+new york city,crimes,Neutral,8884
+new york city,crimes,Positive,868
+new york city,guns,Negative,19
+new york city,guns,Neutral,229
+new york city,guns,Positive,1
+new york city,hate,Negative,59
+new york city,hate,Neutral,118
+new york city,hate,Positive,4
+philadelphia,addictions,Negative,74
+philadelphia,addictions,Neutral,569
+philadelphia,addictions,Positive,19
+philadelphia,crimes,Negative,4201
+philadelphia,crimes,Neutral,7967
+philadelphia,crimes,Positive,786
+philadelphia,guns,Negative,31
+philadelphia,guns,Neutral,205
+philadelphia,guns,Positive,3
+philadelphia,hate,Negative,53
+philadelphia,hate,Neutral,102
+philadelphia,hate,Positive,6
+phoenix,addictions,Negative,59
+phoenix,addictions,Neutral,487
+phoenix,addictions,Positive,13
+phoenix,crimes,Negative,3448
+phoenix,crimes,Neutral,7572
+phoenix,crimes,Positive,835
+phoenix,guns,Negative,16
+phoenix,guns,Neutral,186
+phoenix,guns,Positive,4
+phoenix,hate,Negative,58
+phoenix,hate,Neutral,111
+phoenix,hate,Positive,9
+san antonio,addictions,Negative,60
+san antonio,addictions,Neutral,374
+san antonio,addictions,Positive,13
+san antonio,crimes,Negative,3329
+san antonio,crimes,Neutral,6208
+san antonio,crimes,Positive,714
+san antonio,guns,Negative,23
+san antonio,guns,Neutral,185
+san antonio,guns,Positive,4
+san antonio,hate,Negative,52
+san antonio,hate,Neutral,52
+san antonio,hate,Positive,10
+san diego,addictions,Negative,64
+san diego,addictions,Neutral,435
+san diego,addictions,Positive,17
+san diego,crimes,Negative,3600
+san diego,crimes,Neutral,7532
+san diego,crimes,Positive,808
+san diego,guns,Negative,20
+san diego,guns,Neutral,139
+san diego,hate,Negative,55
+san diego,hate,Neutral,87
+san diego,hate,Positive,8
