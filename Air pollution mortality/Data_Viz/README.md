@@ -5,10 +5,10 @@
 
 ## Files Structure:
 
-### data
+### -data
 Contains the clean data that the plots use
 
-### libs
+### -libs
 Contains the files to produce the figures of the world maps
 
 ###  -index.html
