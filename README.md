@@ -1,7 +1,7 @@
 # Projects Portfolio of Rodrigo Salazar
 Link to [Repo](https://github.com/RodSlzr/portfolio)
 
-## - Air Pollution Mortality
+## - [Air Pollution Mortality](https://github.com/RodSlzr/portfolio/tree/main/Air%20pollution%20mortality)
 
 ### Description
 
