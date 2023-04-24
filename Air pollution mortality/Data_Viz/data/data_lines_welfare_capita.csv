@@ -1,0 +1,271 @@
+Location,Date,Value
+China,1990,62.56
+China,1991,69.51
+China,1992,80.96
+China,1993,94.19
+China,1994,107.95
+China,1995,121.86
+China,1996,137.66
+China,1997,197.02
+China,1998,171.73
+China,1999,242.68
+China,2000,273.91
+China,2001,303.18
+China,2002,339.27
+China,2003,380.99
+China,2004,430.78
+China,2005,480.8
+China,2006,529.48
+China,2007,605.94
+China,2008,683.38
+China,2009,773.84
+China,2010,881.69
+China,2011,981.3
+China,2012,1064.99
+China,2013,1158.37
+China,2014,1249.47
+China,2015,1332.36
+China,2016,1409.74
+China,2017,1479.34
+China,2018,1580.77
+China,2019,1713.64
+"Eastern Europe, Caucasus and Central Asia",1990,1409.26
+"Eastern Europe, Caucasus and Central Asia",1991,1348.54
+"Eastern Europe, Caucasus and Central Asia",1992,1243.11
+"Eastern Europe, Caucasus and Central Asia",1993,1275.1
+"Eastern Europe, Caucasus and Central Asia",1994,1178.22
+"Eastern Europe, Caucasus and Central Asia",1995,1076.97
+"Eastern Europe, Caucasus and Central Asia",1996,979.87
+"Eastern Europe, Caucasus and Central Asia",1997,938.42
+"Eastern Europe, Caucasus and Central Asia",1998,882.95
+"Eastern Europe, Caucasus and Central Asia",1999,936.19
+"Eastern Europe, Caucasus and Central Asia",2000,1042.36
+"Eastern Europe, Caucasus and Central Asia",2001,1107.1
+"Eastern Europe, Caucasus and Central Asia",2002,1212.64
+"Eastern Europe, Caucasus and Central Asia",2003,1303.12
+"Eastern Europe, Caucasus and Central Asia",2004,1360.75
+"Eastern Europe, Caucasus and Central Asia",2005,1472.31
+"Eastern Europe, Caucasus and Central Asia",2006,1488.24
+"Eastern Europe, Caucasus and Central Asia",2007,1577.47
+"Eastern Europe, Caucasus and Central Asia",2008,1675.17
+"Eastern Europe, Caucasus and Central Asia",2009,1511.81
+"Eastern Europe, Caucasus and Central Asia",2010,1583.06
+"Eastern Europe, Caucasus and Central Asia",2011,1544.58
+"Eastern Europe, Caucasus and Central Asia",2012,1572.24
+"Eastern Europe, Caucasus and Central Asia",2013,1508.46
+"Eastern Europe, Caucasus and Central Asia",2014,1440.76
+"Eastern Europe, Caucasus and Central Asia",2015,1316.88
+"Eastern Europe, Caucasus and Central Asia",2016,1220.64
+"Eastern Europe, Caucasus and Central Asia",2017,1144.29
+"Eastern Europe, Caucasus and Central Asia",2018,1171.66
+"Eastern Europe, Caucasus and Central Asia",2019,1209.32
+European Union (27 countries),1990,1869.26
+European Union (27 countries),1991,1836.81
+European Union (27 countries),1992,1785.07
+European Union (27 countries),1993,1734.58
+European Union (27 countries),1994,1728.62
+European Union (27 countries),1995,1742.72
+European Union (27 countries),1996,1738.83
+European Union (27 countries),1997,1724.13
+European Union (27 countries),1998,1721.74
+European Union (27 countries),1999,1713.02
+European Union (27 countries),2000,1700.12
+European Union (27 countries),2001,1676.9
+European Union (27 countries),2002,1654.46
+European Union (27 countries),2003,1632.3
+European Union (27 countries),2004,1590.64
+European Union (27 countries),2005,1589.01
+European Union (27 countries),2006,1613.26
+European Union (27 countries),2007,1660.69
+European Union (27 countries),2008,1677.68
+European Union (27 countries),2009,1626.36
+European Union (27 countries),2010,1620.59
+European Union (27 countries),2011,1604.54
+European Union (27 countries),2012,1542.59
+European Union (27 countries),2013,1461.88
+European Union (27 countries),2014,1403.13
+European Union (27 countries),2015,1404.65
+European Union (27 countries),2016,1358.83
+European Union (27 countries),2017,1368.49
+European Union (27 countries),2018,1413.97
+European Union (27 countries),2019,1460.62
+G20,1990,537.84
+G20,1991,526.69
+G20,1992,517.56
+G20,1993,523.29
+G20,1994,524.09
+G20,1995,525.58
+G20,1996,524.9
+G20,1997,541.48
+G20,1998,526.94
+G20,1999,553.82
+G20,2000,566.67
+G20,2001,570.57
+G20,2002,579.76
+G20,2003,593.35
+G20,2004,602.27
+G20,2005,624.73
+G20,2006,643.02
+G20,2007,686.03
+G20,2008,715.34
+G20,2009,723.12
+G20,2010,766.1
+G20,2011,800.71
+G20,2012,831.1
+G20,2013,860.98
+G20,2014,890.75
+G20,2015,918.22
+G20,2016,935.91
+G20,2017,960.6
+G20,2018,1010.98
+G20,2019,1070.64
+G7,1990,1608.68
+G7,1991,1585.8
+G7,1992,1561.71
+G7,1993,1550.28
+G7,1994,1544.39
+G7,1995,1544.68
+G7,1996,1526.18
+G7,1997,1511.32
+G7,1998,1507.68
+G7,1999,1504.88
+G7,2000,1488.36
+G7,2001,1449.1
+G7,2002,1415.48
+G7,2003,1384
+G7,2004,1330.98
+G7,2005,1313.1
+G7,2006,1287.05
+G7,2007,1258.39
+G7,2008,1218.71
+G7,2009,1137.05
+G7,2010,1122.94
+G7,2011,1108.13
+G7,2012,1081.02
+G7,2013,1052.36
+G7,2014,1022.55
+G7,2015,1016.13
+G7,2016,982.32
+G7,2017,971.02
+G7,2018,997.88
+G7,2019,1019.97
+India,1990,53.42
+India,1991,52.72
+India,1992,54.28
+India,1993,55.31
+India,1994,57.59
+India,1995,60.4
+India,1996,65.29
+India,1997,70.98
+India,1998,76.45
+India,1999,82.37
+India,2000,86.33
+India,2001,91.8
+India,2002,95.89
+India,2003,102.37
+India,2004,107.11
+India,2005,120.49
+India,2006,137.52
+India,2007,195.3
+India,2008,210.55
+India,2009,226.41
+India,2010,251.97
+India,2011,283.15
+India,2012,318.16
+India,2013,360.53
+India,2014,397.42
+India,2015,432.4
+India,2016,454.8
+India,2017,479.5
+India,2018,520.26
+India,2019,555.11
+Latin America and Caribbean,1990,272.63
+Latin America and Caribbean,1991,267.57
+Latin America and Caribbean,1992,275.45
+Latin America and Caribbean,1993,281.88
+Latin America and Caribbean,1994,290.04
+Latin America and Caribbean,1995,292.49
+Latin America and Caribbean,1996,297.65
+Latin America and Caribbean,1997,305.22
+Latin America and Caribbean,1998,311.88
+Latin America and Caribbean,1999,309.31
+Latin America and Caribbean,2000,308.1
+Latin America and Caribbean,2001,304.21
+Latin America and Caribbean,2002,301.98
+Latin America and Caribbean,2003,296.34
+Latin America and Caribbean,2004,303.53
+Latin America and Caribbean,2005,308.79
+Latin America and Caribbean,2006,322.08
+Latin America and Caribbean,2007,338.33
+Latin America and Caribbean,2008,354.15
+Latin America and Caribbean,2009,352.88
+Latin America and Caribbean,2010,369.43
+Latin America and Caribbean,2011,381.15
+Latin America and Caribbean,2012,389.43
+Latin America and Caribbean,2013,400.61
+Latin America and Caribbean,2014,407.01
+Latin America and Caribbean,2015,403.54
+Latin America and Caribbean,2016,399.62
+Latin America and Caribbean,2017,401.77
+Latin America and Caribbean,2018,401.4
+Latin America and Caribbean,2019,404.49
+Middle East and North Africa,1990,502.14
+Middle East and North Africa,1991,496.88
+Middle East and North Africa,1992,518.59
+Middle East and North Africa,1993,532.53
+Middle East and North Africa,1994,540.99
+Middle East and North Africa,1995,578.8
+Middle East and North Africa,1996,595.47
+Middle East and North Africa,1997,620.4
+Middle East and North Africa,1998,645.2
+Middle East and North Africa,1999,663.63
+Middle East and North Africa,2000,677.12
+Middle East and North Africa,2001,682.23
+Middle East and North Africa,2002,690.44
+Middle East and North Africa,2003,704.19
+Middle East and North Africa,2004,730.23
+Middle East and North Africa,2005,746.83
+Middle East and North Africa,2006,772.2
+Middle East and North Africa,2007,800.29
+Middle East and North Africa,2008,829.19
+Middle East and North Africa,2009,840.09
+Middle East and North Africa,2010,861.08
+Middle East and North Africa,2011,854.92
+Middle East and North Africa,2012,862.06
+Middle East and North Africa,2013,858.87
+Middle East and North Africa,2014,864.75
+Middle East and North Africa,2015,884.82
+Middle East and North Africa,2016,904.06
+Middle East and North Africa,2017,898.39
+Middle East and North Africa,2018,905.12
+Middle East and North Africa,2019,912.87
+World,1990,419.74
+World,1991,419.8
+World,1992,424.53
+World,1993,433.61
+World,1994,443.53
+World,1995,451.33
+World,1996,462.39
+World,1997,477.85
+World,1998,488.1
+World,1999,506.53
+World,2000,530.17
+World,2001,541.19
+World,2002,556.72
+World,2003,574.25
+World,2004,595.88
+World,2005,621.53
+World,2006,644.46
+World,2007,677.67
+World,2008,706.15
+World,2009,709.21
+World,2010,749.32
+World,2011,781.69
+World,2012,812.9
+World,2013,847.57
+World,2014,876.89
+World,2015,902.12
+World,2016,910.42
+World,2017,923.06
+World,2018,957.69
+World,2019,1004.43

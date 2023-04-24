@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Pollution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Assistant', sans-serif;
+        }
+        .container {
+            max-width: 1000px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: normal;
+            align-items: normal;
+            align-content: normal;
+            column-gap: 40px;
+            margin: 60px 0px;
+        }
+        .flex-item {
+            display: block;
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: auto;
+            align-self: auto;
+            order: 0;
+            width: 50%;
+        }
+        .float-left {
+            float:left;
+            width: 50%;
+        }
+        text {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+        }
+        hr {
+            margin: 60px 0;
+        }
+        .chart p {
+            background: #eee;
+            padding: 5px 0px 5px 10px;
+            margin-right: 10px;
+        }
+        #monthChart .y-axis line {
+            stroke: #ccc;
+            stroke-dasharray: 2;
+        }
+
+        #monthChart .y-axis .domain {
+            display: none;
+        }
+        #divergingChart text {
+            font-size: 14px;
+        }
+
+        path.domain { display: none; }
+
+        line {
+        stroke: #eee;
+        stroke-dasharray: 1px;
+        }
+
+        .country { cursor: default; }
+        
+        .country path {
+        stroke-width: 1.5;
+        opacity: 0.75;
+        }
+
+        .highlight path {
+        stroke: rgb(227, 18, 36);
+        opacity: 1;
+        }
+
+        .highlight text { fill: rgb(225, 19, 29); }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_ring.css">
+    <link rel="stylesheet" href="styles_map.css">
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Why is no one talking about air pollution? 
+        </h1>
+        <p>Air pollution happens when the air contains particles that have the potential to harm us. There are many ways this can occur. Sometimes it could be caused by natural sources like wildfires or volcanos. However, most of the contamination comes from human activities, like emissions from factories, construction sites, cars, planes, and even second-hand cigarette smoke.  </p>
+        <p>The World Health Organization says that "almost all of the global population (99%) breathe air that exceeds WHO guideline limits and contains high levels of pollutants, with low- and middle-income countries suffering from the highest exposures". This alarming problem requires immediate attention, but unfortunately, we have just learned to live with it. Our inaction is currently costing lives and will cost more in the future.  </p>
+        <p>Using the database "Mortality, morbidity and welfare cost from exposure to environment-related risks" from the Organization for Economic Co-operation and Development (OCDE), I present a few visualizations that show the evolution of air pollution consequences in terms of lives and welfare costs during the past 30 years. </p>
+        <h2> Premature deaths per million inhabitants, 2019</h2>
+        <div id="legend_map_2019"></div>
+        <div id="chart_map_2019"></div>
+        <p> The data comes from the <a href="https://stats.oecd.org/index.aspx?lang=en#">OECD</a> <a href="https://github.com/RodSlzr/CAPP30239_FA22/blob/main/final_project/data/data_scatter_premdeaths_90vs15vs19.csv">GitHub</a>.</p>
+        <p>In this map, we can see that a country's geographic location affects its mortality rate caused by air pollution. This could be related to a variety of reasons. For instance, the Balkans (Albania, Bosnia and Herzegovina, Bulgaria, Croatia, Kosovo, Macedonia, Montenegro, Romania, Serbia, and Slovakia) are the countries with the highest mortality in the world. They rely on lignite and coal-fuelled power stations to produce energy and burn solid fuels to heat homes. All these countries share similar geographic, historical, and economic conditions that make this one of the most polluted places in the world. Similarly, other regions show similar mortality rates within their countries.  </p>
+        <p>We can also appreciate that other countries like China or India show very high mortality rates. It is not surprising, given the attention, that this is one of the main aspects the media offers from these countries. However, this map looked very different 30 years ago. </p>
+        <h2>Premature deaths per million inhabitants, 1990 </h2>
+        <div id="legend_map_1990"></div>
+        <div id="chart_map_1990"></div>
+        <p> The data comes from the <a href="https://stats.oecd.org/index.aspx?lang=en#">OECD</a> <a href="https://github.com/RodSlzr/CAPP30239_FA22/blob/main/final_project/data/data_scatter_premdeaths_90vs15vs19.csv">GitHub</a>.</p>
+        <p>The map above map shows that the Balkans and other countries in Europe, the Americas, and Russia presented higher mortality in 1990. However, we can also notice that other places like China, India, and Northern Africa were better than they are today. Some of them doubled their mortality years compared to the 2019 data. In the graph below, we can see the changes that occurred in more detail:</p>
+        <h2>Premature Deaths per million inhabitants, 1990 (x) vs. 2019 (y)</h2>
+        <h3>(Radius represents total deaths in 2019)</h3>
+        <div id="chart"></div>
+        <p> The data comes from the <a href="https://stats.oecd.org/index.aspx?lang=en#">OECD</a> <a href="https://github.com/RodSlzr/CAPP30239_FA22/blob/main/final_project/data/data_scatter_premdeaths_90vs15vs19.csv">GitHub</a>.</p>
+        <p>This plot helps us understand the general changes, differentiating the most powerful countries in the world and contrasting them with the countries in the most polluted region, the Balkans. We can appreciate that countries above the diagonal line increased their mortality rate in 30 years, while the ones below decreased it. Unfortunately, the majority of the countries are above the diagonal line. In contrast, most G7 countries (Canada, France, Germany, Italy, Japan, the United Kingdom, and the United States) decreased their rates significantly. Their transitions to cleaner energies, greener policies, and economic power have successfully improved air quality for the people living there. </p>
+        <p>However, this has not been the case for the rest of the G20 countries, where most concerningly is the increase of the mortality rates in China and India, mainly because most of the total premature deaths happen there. The industrial growth in those countries happened mostly because many western countries moved their manufacturing operations there to produce goods sold worldwide. In other words, we are all accountable for the air issues and should advocate for changing this situation.</p>
+        <p>Finally, the Balkans are clustered in the right corner, which is expected as they have historically presented the worst mortality rates. Most of them have worsened their mortality rates. Although three of them were able to decrease them, it was moderately. There have been many international efforts to improve air quality in these countries. However, societal, economic, and political constraints have played against them. </p>
+        <h2>Historical premature deaths per million people</h2>
+        <div id="multiline_prem_deaths"></div>
+        <p> The data comes from the <a href="https://stats.oecd.org/index.aspx?lang=en#">OECD</a> <a href="https://github.com/RodSlzr/CAPP30239_FA22/blob/main/final_project/data/data_lines_premdeaths_per1M.csv">GitHub</a>.</p>
+        <p>Despite the incredible success of G7 and European countries in decreasing their rates, the world mortality rate keeps growing. Today it is more likely to die from air pollution than 30 years ago. Even Eastern Europe, Caucasus, and Central Asia have decreased their rates but remain considerably high. We can also see more clearly, the consistent and rapid mortality increase in China and India. The situation is worse than ever. In 2019, the world mortality rate was 537 people per million habitants—the highest in the last 30 years.</p>
+        <h2>Historical welfare cost of premature deaths, USD per capita</h2>
+        <div id="multiline_welfcost"></div>
+        <p> The data comes from the <a href="https://stats.oecd.org/index.aspx?lang=en#">OECD</a> <a href="https://github.com/RodSlzr/CAPP30239_FA22/blob/main/final_project/data/data_lines_welfare_capita.csv">GitHub</a>.</p>
+        <p>These premature deaths cause a welfare cost. Globally, it has increased by more than double in the period analyzed, which is a more significant change than the presented mortality rate. This shows that the impact in terms of costs is more potent than the change in the mortality rate. Given the global operations of the markets, these costs are transferred easier than ever. We are having not only health consequences but economic ones as well. We can also see that economies that are doing better in terms of mortality rates still have high welfare costs, like the G7 and Europe. Showing how much all countries still have to do in this issue.</p>
+        <h2>Percent of GDP impact by country, 2019</h2>
+        <div id="legend"></div>
+        <div id="chart_map"></div>
+        <p> The data comes from the <a href="https://stats.oecd.org/index.aspx?lang=en#">OECD</a> <a href="https://github.com/RodSlzr/CAPP30239_FA22/blob/main/final_project/data/data_map_welfare_gdp_19.csv">GitHub</a>.</p>
+        <p>This map shows a clearer image of the economic impact of premature deaths caused by air pollution. Globally, it represents welfare costs of 3 percent of their GDP and more for most economies, which is very high. Some countries, like the Balkans, reach percentages higher than 13 percent, and China and India represent 10.7 and 8.4 percent, respectively. This highlights the need to pay more attention to this issue, as we could use these resources for other problems.</p>
+        <h2>Premature deaths by gender and age, 2019</h2>
+        <div class="flex-container"> 
+            <div id="ring_gender" class="flex-item chart"></div>
+            <div id="ring" class="flex-item chart"></div> 
+        </div>
+        <p> The data comes from the <a href="https://stats.oecd.org/index.aspx?lang=en#">OECD</a> <a href="https://github.com/RodSlzr/CAPP30239_FA22/blob/main/final_project/data/data_gender_premdeaths_19.csv">GitHub gender</a> <a href="https://github.com/RodSlzr/CAPP30239_FA22/blob/main/final_project/data/data_people_premdeaths_19.csv">GitHub age</a>.</p>
+        <p>Globally for every ten premature deaths related to air pollution, 6 are males, and 4 are females. By age group, we can see a significant portion of elders and kids, the most vulnerable groups in polluted environments. </p>
+        <p>However, that portion of young lives represents a much more substantial portion when considering (disability-adjusted life year) DALYs, which represent the years of life lost due to premature mortality.</p>
+        <h2>DALYs by age, 2019</h2>
+        <div id="ring_dalys" class="flex-item chart"></div>
+        <p> The data comes from the <a href="https://stats.oecd.org/index.aspx?lang=en#">OECD</a> <a href="https://github.com/RodSlzr/CAPP30239_FA22/blob/main/final_project/data/data_age_dalys_19.csv">GitHub</a>.</p>
+        <p>By not taking better actions, we are losing people's years of life and health and wasting other needed resources. We saw that cleaner air conditions are achievable in rich countries. Why is it not possible to alleviate this issue globally? It is time to take global accountability and make a change because it is a matter that affects us all. Everyone deserves clean air, regardless of their economic condition. </p>
+        
+        <h3>References</h3>
+        <p>World Health Organization. Health Topics - Air pollution</p>
+        <p><a href="https://www.who.int/health-topics/air-pollution#tab=tab_1 ">https://www.who.int/health-topics/air-pollution#tab=tab_1  </a></p>
+        <p>Centers for Disease Control and Prevention. Particle Pollution</p>
+        <p><a href="https://www.cdc.gov/air/particulate_matter.html#:~:text=Power%20plants%20and%20coal%20fires,and%20trucks%2C%20and%20construction%20sites.">https://www.cdc.gov/air/particulate_matter.html#:~:text=Power%20plants%20and%20coal%20fires,and%20trucks%2C%20and%20construction%20sites.</a></p>
+        <p>World Bank Group. Going Green Means Cleaner Air, Healthier Living in the Western Balkans</p>
+        <p><a href="https://www.worldbank.org/en/news/feature/2021/05/17/going-green-means-cleaner-air-healthier-living-in-the-western-balkans ">https://www.worldbank.org/en/news/feature/2021/05/17/going-green-means-cleaner-air-healthier-living-in-the-western-balkans  </a></p>
+        <p>Organization for Economic Co-operation and Development. Global premature deaths from selected environmental risks</p>
+        <p><a href="https://www.oecd-ilibrary.org/economics/how-s-life-2013/global-premature-deaths-from-selected-environmental-risks_how_life-2013-graph90-en ">https://www.oecd-ilibrary.org/economics/how-s-life-2013/global-premature-deaths-from-selected-environmental-risks_how_life-2013-graph90-en  </a></p>
+        <p>National Geographic. Air Pollution</p>
+        <p><a href="https://education.nationalgeographic.org/resource/air-pollution ">https://education.nationalgeographic.org/resource/air-pollution  </a></p>
+
+        <br><br><h3>The Process</h3>
+        <h5>Why are you interested in the topic?</h5>
+        <p>I think this topic does not have enough attention, and showing evidence of the current situation could help raise awareness. People are dying and getting sick, we have the means to do something, and we are not doing enough. </p>
+        <h5>What were other options for data, and why did you choose this data set?</h5>
+        <p>Initially, I thought about analyzing housing prices around the world. Is it worth what we pay for housing? Also, one of the questions I had was if there is a correlation between housing prices and air pollution. Would people pay more to live in some cities, even if they were polluted? I am from Mexico City, which I love, but it is very polluted and has the country's most expensive housing. So, it was a natural question for me because I might. Once I started exploring databases to dig into this, I realized how complex the air pollution problem was and how little I had heard in the media about it in the past years. This motivated me to work on this data and see if it was because the issue was not that bad. After seeing the data, I noticed I was wrong, and the problem was more extensive than we all imagined.</p>
+        <h5>Where does the data come from? Include a link to their website and where the data was collected.</h5>
+        <p>My data is from the database "Mortality, morbidity and welfare cost from exposure to environment-related risks" of the Organization for Economic Co-operation and Development (OCDE).<a href=" https://stats.oecd.org/index.aspx?lang=en# "> https://stats.oecd.org/index.aspx?lang=en#   </a></p>
+        <h5>How did you define your story? Any pivots that you made.</h5>
+        <p>I found my story when creating the map of mortality rates. I saw a regional factor when I made the map of 2019. However, when I also made the map of 1990, I saw the story. Some disparities are associated with economic development. At the end of my work, I decided to finish with a few demographic distributions and the DALYs data to close, emphasizing the human side, especially after talking about the economic costs.</p>
+        <h5>Is any data missing? Do you have concerns about data gaps? </h5>
+        <p>A few small countries are missing, but it is not a big concern. Fortunately, the OCDE had data from most of the countries. It is an excellent data source.</p>
+        <h5>Any ethical considerations in the storytelling or disclosures you would like to make about your choices while visualizing?</h5>
+        <p>Not really.</p>
+        <h5>Why did you choose the charts you chose? How do they help tell the story?</h5>
+        <p>I chose the maps to show the regional factor and also for familiarity when talking about countries is the way most people are used to seeing the data. </p>
+        <p>In the case of the scatter plot, I chose it because it is a great resource to compare to periods, especially when discussing improvements using the diagonal. I was interested in showing the longest comparison we could make. I include the size of the circles as the total number of deaths in the present to show where we are now and how severe is the current issue.</p>
+        <p>The multiline charts were handy for the time series data and making the analysis using groups of countries or relevant ones for this issue.</p>
+        <p>Finally, the rings were beneficial in showing proportions of a few categories, like age groups and gender.</p>
+        <h5>Any coding challenges or takeaways? Etc.</h5>
+        <p>It was a challenge for me. However, I am pleased to see the work I have done and to see how much I have learned. However, I still have a lot to learn. Nothing is trivial, and even small details require some work.</p>
+
+
+    
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="libs/d3-color-legend.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+    <script src="scatterplot.js"></script>
+    <script src="ring.js"></script>
+    <script src="ring_gender.js"></script>
+    <script src="ring_dalys.js"></script>
+    <script src="map.js"></script>
+    <script src="map2019.js"></script>
+    <script src="map1990.js"></script>
+    <script src="multiline_prem_deaths.js"></script>
+    <script src="multiline_welfcost_percapita.js"></script>
+</body>
+</html>

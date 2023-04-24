@@ -1,0 +1,201 @@
+country_code,country,rel_prem_deaths_1990,rel_prem_deaths_2015,rel_prem_deaths_2019,abs_prem_deaths_2019,better,cat
+AFG,Afghanistan,224.168,223.026,228.234,34796,no,other
+ALB,Albania,285.349,498.178,532.035,8173,no,Balkans
+DZA,Algeria,425.854,494.707,502.327,113578,no,other
+ASM,American Samoa,93.551,124.749,140.15,41,no,other
+AND,Andorra,169.896,150.952,136.917,79,yes,other
+AGO,Angola,104.099,155.527,174.547,20162,no,other
+ATG,Antigua and Barbuda,372.218,305.836,309.069,180,yes,other
+ARG,Argentina,349.936,300.539,281.206,81847,yes,G20
+ARM,Armenia,609.027,1115.201,1045.64,19799,no,Eeurope
+AUS,Australia,139.187,69.773,70.732,13379,yes,G20
+AUT,Austria,675.491,307.617,267.22,25696,yes,other
+AZE,Azerbaijan,517.276,807.873,783.148,41636,no,Eeurope
+BHS,Bahamas,233.971,243.86,254.771,538,no,other
+BHR,Bahrain,584.532,356.396,381.299,2868,yes,other
+BGD,Bangladesh,200.109,375.193,453.833,280926,no,other
+BRB,Barbados,578.13,549.971,609.426,1046,no,other
+BLR,Belarus,1037.126,1006.043,889.441,78870,yes,Eeurope
+BEL,Belgium,699.434,312.865,302.814,35165,yes,other
+BLZ,Belize,147.423,218.938,238.568,407,no,other
+BEN,Benin,150.516,199.378,195.056,9703,no,other
+BMU,Bermuda,254.365,110.926,124.041,68,yes,other
+BTN,Bhutan,110.916,348.087,353.53,1050,no,other
+BOL,Bolivia,432.729,318.903,337.477,21449,yes,other
+BIH,Bosnia and Herz.,448.563,1115.74,1094.15,21840,no,Balkans
+BWA,Botswana,180.093,416.709,408.65,4424,no,other
+BRA,Brazil,200.832,195.662,206.572,268536,no,G20
+BRN,Brunei,100.498,86.058,89.332,180,yes,other
+BGR,Bulgaria,1352.45,1281.85,1296.192,80361,yes,Balkans
+BFA,Burkina Faso,124.139,174.511,166.317,14428,no,other
+BDI,Burundi,121.852,90.252,84.593,5220,yes,other
+CPV,Cabo Verde,184.349,458.437,579.372,1100,no,other
+KHM,Cambodia,171.069,194.625,212.328,16540,no,other
+CMR,Cameroon,224.108,402.52,395.813,42717,no,other
+CAN,Canada,213.875,96.955,100.683,33722,yes,G7
+CAF,Central African Rep.,157.752,203.352,195.525,4814,no,other
+TCD,Chad,131.522,166.588,163.741,10916,no,other
+CHL,Chile,278.542,301.959,307.534,31564,no,other
+CHN,China,442.026,953.961,993.582,6908715,no,G20
+TWN,Taiwan,291.172,474.049,487.4,62243,no,other
+COL,Colombia,210.093,245.993,259.564,70171,no,other
+COM,Comoros,95.05,111.713,109.659,457,no,other
+COG,Congo,223.28,326.647,334.787,7476,no,other
+CRI,Costa Rica,116.598,175.652,185.842,4563,no,other
+CIV,Cote d'Ivoire,201.315,300,261.468,33409,no,other
+HRV,Croatia,959.035,798.073,743.796,27311,yes,Balkans
+CUB,Cuba,438.081,544.04,516.016,37066,no,other
+CYP,Cyprus,488.219,356.432,344.973,2963,yes,Eeurope
+CZE,Czechia,1256.59,603.457,585.256,60475,yes,Eeurope
+PRK,North Korea,357.806,788.252,841.388,93680,no,other
+COD,Dem. Rep. Congo,158.143,129.548,127.274,51222,yes,other
+DNK,Denmark,713.361,224.227,224.931,15971,yes,other
+DJI,Djibouti,120.318,434.895,465.637,1772,no,other
+DMA,Dominica,343.605,462.712,455.776,207,no,other
+DOM,Dominican Rep.,97.887,357.522,353.82,14709,no,other
+ECU,Ecuador,171.351,242.409,244.057,20325,no,other
+EGY,Egypt,1024.631,958.617,902.379,511409,yes,other
+SLV,El Salvador,133.966,292.013,294.576,8798,no,other
+GNQ,Eq. Guinea,150.74,310.348,292.966,1457,no,other
+ERI,Eritrea,186.019,337.236,393.585,5968,no,other
+EST,Estonia,451.353,138.675,120.481,3055,yes,Eeurope
+SWZ,Eswatini,154.656,286.121,298.983,1763,no,other
+ETH,Ethiopia,83.939,74.575,79.87,39920,yes,other
+FJI,Fiji,114.085,328.762,370.588,1478,no,other
+FIN,Finland,269.214,67.303,69.65,5479,yes,other
+FRA,France,403.756,216.93,203.434,124410,yes,G7
+GAB,Gabon,312.77,407.04,378.259,4145,no,other
+GMB,Gambia,137.24,199.283,207.224,1999,no,other
+GEO,Georgia,766.495,755.281,778.679,24869,no,Eeurope
+DEU,Germany,800.1,348.94,324.287,283628,yes,G7
+GHA,Ghana,236.776,409.815,412.236,51930,no,other
+GRC,Greece,669.291,552.716,545.872,47068,yes,Eeurope
+GRL,Greenland,124.862,96.272,108.468,42,yes,other
+GRD,Grenada,368.161,440.261,459.784,301,no,other
+GUM,Guam,129.051,230.322,185.295,158,no,other
+GTM,Guatemala,160.58,209.687,212.392,17347,no,other
+GIN,Guinea,195.603,209.444,191.876,12794,yes,other
+GNB,Guinea-Bissau,183.735,195.36,184.813,1827,no,other
+GUY,Guyana,430.85,552.859,525.34,2570,no,other
+HTI,Haiti,101.741,154.862,161.801,8237,no,other
+HND,Honduras,75.401,187.158,182.946,7057,no,other
+HUN,Hungary,1080.218,765.65,716.649,64156,yes,Eeurope
+ISL,Iceland,119.755,46.461,45.837,159,yes,other
+IND,India,320.013,662.334,717.172,3875865,no,G20
+IDN,Indonesia,212.705,369.283,394.498,501665,no,G20
+IRN,Iran,435.045,515.095,503.57,236707,no,other
+IRQ,Iraq,642.301,650.837,645.881,130861,no,other
+IRL,Ireland,416.863,120.322,109.708,6541,yes,other
+ISR,Israel,488.461,289.577,267.569,16571,yes,other
+ITA,Italy,700.677,441.97,407.807,224489,yes,G7
+JAM,Jamaica,153.1,310.039,318.193,4666,no,other
+JPN,Japan,242.319,288.502,313.08,227995,no,G7
+JOR,Jordan,356.421,272.514,306.872,14065,yes,other
+KAZ,Kazakhstan,487.316,578.585,546.669,69650,no,other
+KEN,Kenya,70.689,126.648,104.396,26758,no,other
+KIR,Kiribati,115.211,127.425,156.89,90,no,other
+KOR,South Korea,417.572,361.586,426.671,122731,no,G20
+KWT,Kuwait,264.494,324.583,364.818,6588,no,other
+KGZ,Kyrgyzstan,402.367,437.587,403.334,16570,no,other
+LAO,Laos,170.377,169.567,192.012,7194,no,other
+LVA,Latvia,993.944,670.69,586.188,14333,yes,Eeurope
+LBN,Lebanon,573.83,521.604,488.095,17737,yes,other
+LSO,Lesotho,199.202,431.752,394.648,4416,no,other
+LBR,Liberia,200.762,144.472,132.841,3235,yes,other
+LBY,Libya,293.666,438.996,496.634,15426,no,other
+LTU,Lithuania,679.673,554.192,457.156,14493,yes,Eeurope
+LUX,Luxembourg,546.994,162.513,147.914,968,yes,other
+MDG,Madagascar,74.658,84.607,83.203,10192,no,other
+MWI,Malawi,71.219,82.11,70.338,7006,yes,other
+MYS,Malaysia,388.216,321.457,330.26,58459,yes,other
+MDV,Maldives,108.141,78.966,92.749,243,yes,other
+MLI,Mali,131.354,165.973,164.888,13979,no,other
+MLT,Malta,478.893,327.459,334.456,1143,yes,other
+MHL,Marshall Islands,79.844,178.63,204.164,55,no,other
+MRT,Mauritania,309.344,328.671,311.503,7027,no,other
+MUS,Mauritius,350.131,430.215,477.773,3492,no,other
+MEX,Mexico,252.533,273.001,286.879,191426,no,G20
+FSM,Micronesia,140.932,293.59,282.035,162,no,other
+MDA,Moldova,613.876,678.368,520.199,20578,yes,Eeurope
+MNG,Mongolia,374.916,602.498,696.588,9434,no,other
+MNE,Montenegro,707.413,978.348,898.871,3878,no,Balkans
+MAR,Morocco,298.227,663.423,742.247,114962,no,other
+MOZ,Mozambique,48.506,67.434,61.767,8293,no,other
+MMR,Myanmar,253.517,409.112,447.049,119668,no,other
+NAM,Namibia,220.221,330.477,316.121,4068,no,other
+NRU,Nauru,135.237,95.719,98.902,9,yes,other
+NPL,Nepal,242.877,573.033,625.103,67197,no,other
+NLD,Netherlands,573.827,263.406,267.263,45175,yes,other
+NZL,New Zealand,132.229,57.736,63.304,2450,yes,other
+NIC,Nicaragua,56.572,140.942,153.179,4101,no,other
+NER,Niger,177.443,139.39,127.141,14795,yes,other
+NGA,Nigeria,234.535,361.862,340.726,301573,no,other
+MKD,Macedonia,967.449,1329.817,1321.068,17685,no,Balkans
+MNP,Northern Mariana Islands,125.796,208.173,181.347,55,no,other
+NOR,Norway,390.792,84.774,73.109,6351,yes,other
+OMN,Oman,374.68,375.858,314.447,8651,yes,other
+PAK,Pakistan,260.937,523.435,526.353,467535,no,other
+PLW,Palau,169.082,387.368,250.488,28,no,other
+PSE,Palestinian Authority or West Bank and Gaza Strip,277.315,381.296,359.279,9038,no,other
+PAN,Panama,125.297,179.334,153.155,3583,no,other
+PNG,Papua New Guinea,76.74,121.064,134.518,4841,no,other
+PRY,Paraguay,90.995,124.866,148.41,4922,no,other
+PER,Peru,280.628,258.758,274.254,46515,yes,other
+PHL,Philippines,175.879,281.189,296.231,153826,no,other
+POL,Poland,993.335,704.905,732.817,223633,yes,Eeurope
+PRT,Portugal,391.365,210.639,203.876,21735,yes,other
+PRI,Puerto Rico,134.245,104.951,143.911,2801,no,other
+QAT,Qatar,365.181,175.404,191.371,2260,yes,other
+ROU,Romania,760.074,734.971,752.331,122917,yes,Balkans
+RUS,Russia,806.547,608.6,506.773,826252,yes,G20
+RWA,Rwanda,156.664,131.829,139.115,8744,yes,other
+KNA,Saint Kitts and Nevis,309.429,171.682,205.376,68,yes,other
+LCA,Saint Lucia,273.085,379.838,439.05,383,no,other
+VCT,Saint Vincent and the Grenadines,268.596,542.482,562.088,316,no,other
+WSM,Samoa,146.458,180.146,205.951,217,no,other
+SMR,San Marino,203.775,163.932,167.101,35,yes,other
+STP,Sao Tome and Principe,144.37,248.612,239.556,225,no,other
+SAU,Saudi Arabia,278.986,513.359,520.399,84657,no,G20
+SEN,Senegal,186.589,219.966,206.549,16568,no,other
+SRB,Serbia,981.441,1272.648,1210.396,80444,no,Balkans
+SYC,Seychelles,330.193,325.011,358.952,197,no,other
+SLE,Sierra Leone,185.132,200.575,197.282,7445,no,other
+SGP,Singapore,377.503,203.979,229.531,7386,yes,other
+SVK,Slovakia,1088.821,646.356,636.494,31173,yes,Balkans
+SVN,Slovenia,651.164,390.725,396.104,7298,yes,Eeurope
+SLB,Solomon Is.,79.329,147.83,162.635,419,no,other
+SOM,Somalia,43.536,47.475,49.759,3578,no,other
+ZAF,South Africa,338.667,482.783,423.414,148365,no,G20
+SSD,South Sudan ,159.182,136.498,125.256,8123,yes,other
+ESP,Spain,352.437,205.207,189.99,81463,yes,other
+LKA,Sri Lanka,172.151,300.444,340.711,36736,no,other
+SDN,Sudan,197.738,335.521,388.11,62920,no,other
+SUR,Suriname,333.758,493.995,448.491,1391,no,other
+SWE,Sweden,314.519,70.996,64.641,10711,yes,other
+CHE,Switzerland,534.559,197.046,160.047,16386,yes,other
+SYR,Syrian Arab Republic,528.071,557.749,595.102,59486,no,other
+TJK,Tajikistan,363.783,527.143,510.444,22164,no,other
+TZA,Tanzania,86.519,115.339,107.54,28664,no,other
+THA,Thailand,260.6,395.964,462.915,168690,no,other
+TLS,Timor-Leste,75.193,150.793,162.516,759,no,other
+TGO,Togo,147.056,201.304,200.129,7097,no,other
+TON,Tonga,99.918,187.416,195.169,110,no,other
+TTO,Trinidad and Tobago,518.754,576.295,638.644,5055,no,other
+TUN,Tunisia,394.781,612.591,627.556,39342,no,other
+TUR,Turkey,523.652,543.182,499.227,241798,yes,G20
+TKM,Turkmenistan,637.822,640.315,602.374,21375,yes,other
+TUV,Tuvalu,123.767,165.591,179.742,12,no,other
+UGA,Uganda,66.525,124.074,103.672,19868,no,other
+UKR,Ukraine,1078.55,1125.826,975.989,395925,yes,Eeurope
+ARE,United Arab Emirates,319.646,259.004,333.016,10709,no,other
+GBR,United Kingdom,722.556,218.808,214.122,176749,yes,G7
+USA,United States of America,377.84,155.408,145.26,514082,yes,G7
+VIR,United States Virgin Islands,162.969,268.059,299.087,152,no,other
+URY,Uruguay,285.525,221.763,211.845,5550,yes,other
+UZB,Uzbekistan,497.885,839.486,811.529,141550,no,other
+VUT,Vanuatu,90.487,164.126,181.466,214,no,other
+VEN,Venezuela,246.381,338.346,430.519,55493,no,other
+VNM,Vietnam,146.051,370.51,388.53,167530,no,other
+YEM,Yemen,182.909,367.859,386.895,42843,no,other
+ZMB,Zambia,130.722,164.872,164.885,12682,no,other
+ZWE,Zimbabwe,121.565,201.596,177.914,14881,no,other
