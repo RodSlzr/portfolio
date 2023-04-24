@@ -1,4 +1,4 @@
-# Final Project
+# Visualizations and Analysis of Worldwide Air Pollution Data
 By Rodrigo Salazar
 
 ### data
