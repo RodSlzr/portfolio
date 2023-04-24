@@ -2,6 +2,9 @@
 ### By Rodrigo Salazar
 ## Read the [article](https://rodslzr.github.io/portfolio/Air%20pollution%20mortality/Data_Viz/).
 
+
+## Files Structure:
+
 ### data
 Contains the clean data that the plots use
 
