@@ -1,55 +1,21 @@
-Capptivators - Crime Data & Twitter Analysis by Major US City, 2005-2021
+# Comparison of SVD and LSTM using time series data of premature deaths due to air pollution from the Balkans
+### By Rodrigo Salazar
+Machine Learning Project to compare the forecast of the premature deaths due to air pollution in one of the most affected regions, the Balkans, using SVD and LSTM. You can read the project [here](https://rodslzr.github.io/portfolio/Air%20pollution%20mortality/Pollution_in_the_Balkans.pdf ), and take a look at the code [here](https://github.com/RodSlzr/portfolio/blob/main/Air%20pollution%20mortality/Final%20Project%20MFML.ipynb).
 
-The app scrapes twitter using twint, performs cluster and sentiment analysis, merges the findings with fbi data on crimes by major US city, and creates a dash dashboard. The app is set up to run the dashboard on data that is already prepared and aggregated, but the twitter scraping and sentiment code is in the twitter folder.  
+### Technologies Used
 
+Pandas, NumPy, ARIMA, PyTorch, Matplotlib, and Plotly
 
+## Files Structure
 
-To run the app: 
+### -Data Viz
+Contains the files to produce the data visualizations and analysis of the worldwide data.
 
-(1) Enter the virtual environment while you are in the proj-capptivators folder by running: source install.sh 
-(2) Enter into the crime_sentiment folder 
-(3) From the crime_sentiment folder, run: python3 -m crime_sentiment
-(4) Dashboard will display on http://127.0.0.1.8051/
+### -data
+Contains the clean data for the ML project of the premature death rates of the "Mortality, morbidity and welfare cost from exposure to environmental-related risk" database from the Organization for Economic, Co-operation and Development (OECD). From 1990 to 2019 of 204 countries, filtering the Balkans.
 
-To *just* scrape tweets:
+### -Final Project MFML.ipynb
+ML code using the SVD and LSTM approaches.
 
-Use: twitter_data.tweets_scraping(twitter_data.viol_voc, day1, month1, year1, day2, month2, year2)
-(1) import twitter_data
-(2) twitter_data.tweets_scraping(td.viol_voc, 1, 1, 2017, 4, 1, 2017)
-
-
-
-Structure of the app: 
-
-crime_sentiment 
--__init__.py
--__main__.py
--__pycache__
--Capptivators Paper
--proj-structure
--app.py
--dashboard
-    -crime.py
--data
-    -fbi
-        -Crime_2000_2018.zip
-    -twitter
-        -aggregated_results
-        -sentiment_disaggregated_results
-        -tweets_downloads
-        -tweets_downloads_test
-    -fbi_twitter_merge
-        -crime_data.csv
--sentiment
-    -twitter_data.py
-    -twitter_df_pro.py
-    -aggregation.py
--project_feedback
-    -proj_d1.md 
-    -proj-d2-feedback.md
-    -proj_d2.pdf
-install.sh
-README.md - this file
-requirements.txt
-
-
+### -Pollution_in_the_Balkans.pdf
+Final document with the results of this project.
