@@ -1,9 +1,9 @@
 # PROPUBLICA
-API_KEY = "Li9aCR2BjLZviTE2vhRXQ9QDqq1XU8NxXUXkQDbA"
+API_KEY = 1 # check private repo
 # OPENSECRETS
-API_KEY2 = 'd1d012a1e374fbd4a7fff80d7b38215f'
-# email : usmca1@economia.gob.mx
-# password : pasantia2022
+API_KEY2 = 1 # check private repo
+# email : 1 # check private repo
+# password : 1 # check private repo
 
 from redis import StrictRedis
 from congress import Congress
