@@ -1,5 +1,6 @@
 # Visualizations and Analysis of Worldwide Air Pollution Data
 By Rodrigo Salazar
+Read the [article](https://rodslzr.github.io/portfolio/Air%20pollution%20mortality/Data_Viz/).
 
 ### data
 Contains the clean data that the plots use
