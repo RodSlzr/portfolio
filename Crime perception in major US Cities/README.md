@@ -73,13 +73,6 @@ crime_sentiment
     
     -aggregation.py
     
--project_feedback
-
-    -proj_d1.md 
-    
-    -proj-d2-feedback.md
-    
-    -proj_d2.pdf
     
 install.sh
 
