@@ -28,9 +28,12 @@ You can read [here](https://github.com/RodSlzr/portfolio/blob/main/Crime%20perce
 
 Pandas, NumPy, NLTK, Scikit-learn, Twint, Dash, and Plotly.
 
-## - Stakeholders automated reports
+## - [Stakeholders automated reports](https://github.com/RodSlzr/portfolio/tree/main/Stakeholders%20automated%20reports)
 
 ### Description
 
+In 2022, while interning at the Embassy of Mexico in the US, two other interns and I designed and developed a Stakeholders App that generated tailored reports for the embassy on key stakeholders such as congress representatives, business organizations, non-profits, and think tanks. The reports consisted of a political profile section, an economic analysis section, and a press section. They include synthesized relevant information and visuals.
+
 ### Technologies Used
 
+Python (Pandas, NumPy, BeautifulSoup, Flask, Jinja, Twint, Matplotlib, SQLite3), Multiple APIs, HTML & CSS.
