@@ -9,7 +9,7 @@ Pandas, NumPy, ARIMA, PyTorch, Matplotlib, and Plotly
 ## Files Structure
 
 ### -[Data Viz (Independent Project, same data source, broader focus)](https://github.com/RodSlzr/portfolio/tree/main/Air%20pollution%20mortality/Data_Viz)
-Contains the files to produce the data visualizations and analysis of the worldwide data.
+Contains the files to produce the data visualizations and analysis of the worldwide data. You can see my visualizations in this [page](https://rodslzr.github.io/portfolio/Air%20pollution%20mortality/Data_Viz/).
 
 ### -data
 Contains the clean data for the ML project of the premature death rates of the "Mortality, morbidity and welfare cost from exposure to environmental-related risk" database from the Organization for Economic, Co-operation and Development (OECD). From 1990 to 2019 of 204 countries, filtering the Balkans.
