@@ -15,7 +15,7 @@ Additionally, I did a Machine Learning Project to compare the forecast of the pr
 D3, HTML, CSS, Pandas, NumPy, ARIMA, PyTorch, Matplotlib, and Plotly
 
 
-## - [Crime Perception in Chicago](https://github.com/RodSlzr/portfolio/tree/main/Crime%20perception%20in%20major%20US%20Cities)
+## - [Crime Perception in Major US Cities](https://github.com/RodSlzr/portfolio/tree/main/Crime%20perception%20in%20major%20US%20Cities)
 
 ### Description
 
