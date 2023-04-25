@@ -1,7 +1,7 @@
 # Crime Data & Twitter Analysis by Major US Cities, 2005-2021
 ### By Rodrigo Salazar, Sophie Logan, Kenia Nogueda, & Alejandro Saenz
 
-### You can read [here](https://github.com/RodSlzr/portfolio/blob/main/Crime%20perception%20in%20major%20US%20Cities/Capptivators%20Paper%20(1).pdf) the results of the project.
+### You can read [here](https://github.com/RodSlzr/portfolio/blob/main/Crime%20perception%20in%20major%20US%20Cities/Capptivators%20Paper%20(1).pdf) the report of the project.
 
 ## Description
 
