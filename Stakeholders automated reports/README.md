@@ -13,7 +13,7 @@ In 2022, while interning at the Embassy of Mexico in the US, two other interns a
 
 4. Project development: We worked closely with the embassy to ensure that the app met their specific needs and requirements and significantly improved their stakeholders' full reports. We were solely responsible for the technical aspect of the project, and the embassy was extremely pleased with the final product.
 
-As the initial intern selected for the project, I invited two classmates to join me in collaborating and working together. Our team was involved in every aspect of the project, from the initial design and development phase to the final product. However, my primary responsibility was in the front-end part of the project.
+As the initial intern selected for the project, I invited two classmates to join me in collaborating and working together. Our team was involved in every aspect of the project, from the initial design and development phase to the final product. However, my primary responsibility was in the front-end part of the project (Dashboard folder).
 
 ### Technologies Used
 
