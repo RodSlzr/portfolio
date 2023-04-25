@@ -21,6 +21,7 @@ Pandas, NumPy, NLTK, Scikit-learn, Twint, Dash, and Plotly.
 
 (4) Dashboard will display on http://127.0.0.1.8051/
 
+
 To *just* scrape tweets:
 
 Use: twitter_data.tweets_scraping(twitter_data.viol_voc, day1, month1, year1, day2, month2, year2)
@@ -33,52 +34,49 @@ Use: twitter_data.tweets_scraping(twitter_data.viol_voc, day1, month1, year1, da
 
 Structure of the app: 
 
-crime_sentiment 
+-crime_sentiment (Code)
+    -dashboard
+
+        -crime.py
+
+    -data
+
+        -fbi
+
+            -Crime_2000_2018.zip
+
+        -twitter
+
+            -aggregated_results
+
+            -sentiment_disaggregated_results
+
+            -tweets_downloads
+
+            -tweets_downloads_test
+
+        -fbi_twitter_merge
+
+            -crime_data.csv
+
+    -sentiment
+
+        -twitter_data.py
+
+        -twitter_df_pro.py
+
+        -aggregation.py
+
 
 -__init__.py
 
 -__main__.py
 
--__pycache__
+-Capptivators Paper (results)
 
--Capptivators Paper
+-proj-structure (diagram)
 
--proj-structure
-
--app.py
-
--dashboard
-
-    -crime.py
-    
--data
-
-    -fbi
-    
-        -Crime_2000_2018.zip
-        
-    -twitter
-    
-        -aggregated_results
-        
-        -sentiment_disaggregated_results
-        
-        -tweets_downloads
-        
-        -tweets_downloads_test
-        
-    -fbi_twitter_merge
-    
-        -crime_data.csv
-        
--sentiment
-
-    -twitter_data.py
-    
-    -twitter_df_pro.py
-    
-    -aggregation.py
-    
+-app.py    
     
 install.sh
 
