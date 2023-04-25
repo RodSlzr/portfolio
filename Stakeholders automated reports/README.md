@@ -1,30 +1,28 @@
-# Projects Portfolio of Rodrigo Salazar
-Link to [Repo](https://github.com/RodSlzr/portfolio)
+# Stakeholders automated reports
+### By Rodrigo Salazar, Diego Martínes, & Karla Tamez
 
-## - Air Pollution Mortality
+In 2022, while interning at the Embassy of Mexico in the US, two other interns and I designed and developed a Stakeholders App that generated tailored reports for the embassy on key stakeholders such as congress representatives, business organizations, non-profits, and think tanks. The reports consisted of a political profile section, an economic analysis section, and a press section. They include synthesized relevant information and visuals.
 
-### Description
+### Our process involved the following steps:
 
-Using the database "Mortality, morbidity and welfare cost from exposure to environment-related risks" from the Organization for Economic Co-operation and Development (OCDE), I present a few visualizations that show the evolution of air pollution consequences in terms of lives and welfare costs during the past 30 years.
-You can see my visualizations in this [page](https://rodslzr.github.io/portfolio/Air%20pollution%20mortality/Data_Viz/).
+1. Data collection: We sourced reliable APIs and utilized web scraping techniques to collect relevant data. For the press section, we additionally employed Twint to gather Tweets.
 
-Additionally, I did a Machine Learning Project to compare the forecast of the premature deaths due to air pollution in one of the most affected regions, the Balkans, using SVD and LSTM. You can read the project [here](https://rodslzr.github.io/portfolio/Air%20pollution%20mortality/Pollution_in_the_Balkans.pdf ), and take a look at the code [here](https://github.com/RodSlzr/portfolio/blob/main/Air%20pollution%20mortality/Final%20Project%20MFML.ipynb).
+2. Back-end platform design: We wrote code to collect the most current data, clean, process, and store it in a database that we accessed using SQL.
 
-### Technologies Used
+3. Front-end platform design: We used Flask and a client-server model to design a simple interface that enabled users to receive customized reports and update qualitative information.
 
-D3, HTML, CSS, Pandas, NumPy, ARIMA, PyTorch, Matplotlib, and Plotly
+4. Project development: We worked closely with the embassy to ensure that the app met their specific needs and requirements and significantly improved their stakeholders' full reports. We were solely responsible for the technical aspect of the project, and the embassy was extremely pleased with the final product.
 
-
-## - Crime Perception in Chicago
-
-### Description
+As the initial intern selected for the project, I invited two classmates to join me in collaborating and working together. Our team was involved in every aspect of the project, from the initial design and development phase to the final product. However, my primary responsibility was in the front-end part of the project.
 
 ### Technologies Used
 
+Python (Pandas, NumPy, BeautifulSoup, Flask, Jinja, Twint, Matplotlib, SQLite3), Multiple APIs, HTML & CSS.
 
-## - Stakeholders automated reports
+## Files Structure
 
-### Description
+### -API
+Contains the files to connect with the APIs and preprocess the data.
 
-### Technologies Used
-
+### -Dashboard
+Contains the HTML and CSS files to generate the interface.
