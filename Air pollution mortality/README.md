@@ -1,5 +1,5 @@
 # Comparison of SVD and LSTM using time series data of premature deaths due to air pollution from the Balkans
-### By Rodrigo Salazar
+### By Rodrigo Salazar & Sophie Logan
 Machine Learning Project to compare the forecast of the premature deaths due to air pollution in one of the most affected regions, the Balkans, using SVD and LSTM. You can read the project [here](https://rodslzr.github.io/portfolio/Air%20pollution%20mortality/Pollution_in_the_Balkans.pdf ), and take a look at the code [here](https://github.com/RodSlzr/portfolio/blob/main/Air%20pollution%20mortality/Final%20Project%20MFML.ipynb).
 
 ### Technologies Used
