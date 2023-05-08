@@ -17,25 +17,25 @@ urllib3.disable_warnings()
 
 # Pro-publica
 ## Congress
-headers = {'X-API-Key': 'Li9aCR2BjLZviTE2vhRXQ9QDqq1XU8NxXUXkQDbA',}
-pp_base = 'https://api.propublica.org/congress/v1/'
+headers = 1 # Available in private repo
+pp_base = 1 # Available in private repo
 ## Campaign Finance
-headers_cf = {'X-API-Key': 'VYYgLHhbV4VOedGEXkQVSHw8M4bfeynzuhMuHNTl',}
-cf_base = 'https://api.propublica.org/campaign-finance/v1/'
+headers_cf = 1 # Available in private repo
+cf_base = 1 # Available in private repo
 
 # Open Secrets
-apikey = 'd1d012a1e374fbd4a7fff80d7b38215f'
-os_base = 'http://www.opensecrets.org/api/?method='
+apikey = 1 # Available in private repo
+os_base = 1 # Available in private repo
 # email : usmca1@economia.gob.mx --- password : pasantia2022
 
 # American Community Survey Data - ACS - Census Bureau
-key = '5249ce7f4a7ad2e553fe1572a4c6cdd2b2e4a3da'
+key = 1 # Available in private repo
 last_year = '2020'
-acs_base = f'https://api.census.gov/data/{last_year}/acs/acs5'
+acs_base = 1 # Available in private repo
 
 # Harvard Dataverse
-# user: usmca_1-. --- password : pasantia2022
-api_token = '645bedbd-2dab-47eb-a8ad-517bd1399411'
+# user: 1 # Available in private repo password 1 # Available in private repo
+api_token = 1 # Available in private repo
 # Expiration Date: 2023-08-05
 
 ########################################## GENERAL VARIABLES ##########################################
