@@ -1,6 +1,22 @@
 # Projects Portfolio of Rodrigo Salazar
 Link to [Repo](https://github.com/RodSlzr/portfolio)
 
+## - [Air Pollution Estimation](https://github.com/RodSlzr/portfolio/tree/main/Air%20pollution%20estimation)
+
+### Description
+
+To address the lack of comprehensive PM 2.5 data and provide an alternative solution. This project aims to explore the use of Machine Learning. By leveraging location, time, and information from existing sensors, and employing a Random Forest Regressor model in this project, we aim to demonstrate the potential of Machine Learning in estimating PM 2.5 levels and contributing to the monitoring and management of air pollution, particularly in regions with limited sensor coverage.
+
+The OpenAQ data from the Registry of Open Data of AWS was utilized. This dataset offers comprehensive and aggregated physical air quality data from various sources, including government, research-grade, and other publicly available data sources. To focus specifically on Mexico and ensure a relevant and recent dataset, the data request was limited to information from March to May 2023. By leveraging Purple Air's extensive network, which includes a large number of air quality sensors, the dataset obtained for this project consisted of nearly 19 million rows of data.
+
+We achieved an accuracy of 48%, which is significantly better than random guessing with a probability of 1/3, indicating that our model has demonstrated some level of predictive power in forecasting climate factors.
+
+You can read the full project [here](https://github.com/RodSlzr/portfolio/tree/main/Air%20pollution%20estimation), and take a look at the code [here](https://github.com/macs30123-s23/final-project-final-project-rodslzr/blob/main/Final_Project_RS.ipynb).
+
+### Technologies Used
+
+AWS EMR Cluster, PySpark, Pandas, NumPy, Seaborn, and Matplotlib
+
 ## - [Air Pollution Mortality](https://github.com/RodSlzr/portfolio/tree/main/Air%20pollution%20mortality)
 
 ### Description
