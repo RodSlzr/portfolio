@@ -1,6 +1,8 @@
 # Projects Portfolio of Rodrigo Salazar
 Link to [Repo](https://github.com/RodSlzr/portfolio)
 
+## Air Pollution Projects
+
 ## - [Air Pollution Estimation](https://github.com/RodSlzr/portfolio/tree/main/Air%20pollution%20estimation)
 
 ### Description
