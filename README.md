@@ -11,7 +11,7 @@ The OpenAQ data from the Registry of Open Data of AWS was utilized. This dataset
 
 We achieved an accuracy of 48%, which is significantly better than random guessing with a probability of 1/3, indicating that our model has demonstrated some level of predictive power in forecasting climate factors.
 
-You can read the full project [here](https://github.com/RodSlzr/portfolio/tree/main/Air%20pollution%20estimation), and take a look at the code [here](https://github.com/macs30123-s23/final-project-final-project-rodslzr/blob/main/Final_Project_RS.ipynb).
+You can read the full project [here](https://github.com/RodSlzr/portfolio/tree/main/Air%20pollution%20estimation), and take a look at the code [here](https://github.com/RodSlzr/portfolio/blob/main/Air%20pollution%20estimation/Final_Project_RS.ipynb).
 
 ### Technologies Used
 
